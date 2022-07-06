@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        
+        <title>AutosCR</title>        
+        <meta charset="UTF-8"/>
+        <link href="../../static/estilosplantilla.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="contenedor">
+            <header th:fragment="menu" class="header">
+            <nav class="nav">
+                <a href="index.html" class="logo_nav-link">AutosCR</a>
+                <ul class="ul-menu">
+                    <li><a class="li-menu" href="index.html">MiCarrito</a></li>
+                    <li><a  class="li-menu" href="index.html">Compra</a></li>
+                    <li><a  class="li-menu" href="index.html">Alquiler</a></li>
+                    <li><a  class="li-menu" href="index.html">MiReserva</a></li>
+                    <li><a  class="li-menu" href="index.html">Ayuda</a></li>
+                    <li><botton class="li-menu" href="index.html">Iniciar Sesión</botton></li>
+                </ul>
+            </nav>
+            </header>
+            
+        
+        <footer th:fragment="footer" class="foter">
+            <p>&COPY; Todos los derechos reservados</p>
+        </footer>
+        </div>
+    </body>
+</html>
