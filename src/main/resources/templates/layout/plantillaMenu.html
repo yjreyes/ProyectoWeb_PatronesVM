@@ -6,26 +6,27 @@
         
         <title>AutosCR</title>        
         <meta charset="UTF-8"/>
-        <link href="../../static/estilosplantilla.css" rel="stylesheet" type="text/css"/>
+        
     </head>
     <body>
         <div class="contenedor">
-            <header th:fragment="menu" class="header">
+            <header class="header" th:fragment="menu">
             <nav class="nav">
-                <a href="index.html" class="logo_nav-link">AutosCR</a>
+                <a th:href="index.html" class="logo_nav-link">AutosCR</a>
                 <ul class="ul-menu">
-                    <li><a class="li-menu" href="index.html">MiCarrito</a></li>
-                    <li><a  class="li-menu" href="index.html">Compra</a></li>
-                    <li><a  class="li-menu" href="index.html">Alquiler</a></li>
-                    <li><a  class="li-menu" href="index.html">MiReserva</a></li>
-                    <li><a  class="li-menu" href="index.html">Ayuda</a></li>
-                    <li><botton class="li-menu" href="index.html">Iniciar Sesión</botton></li>
+                    <li class="li-menu"><a  th:href="index.html">MiCarrito</a></li>
+                    <li class="li-menu"><a  th:href="index.html">Compra</a></li>
+                    <li class="li-menu"><a  th:href="index.html">Alquiler</a></li>
+                    <li class="li-menu"><a  th:href="index.html">MiReserva</a></li>
+                    <li class="li-menu"><a  th:href="index.html">Ayuda</a></li>
+                    <li><botton class="li-menu" th:href="index.html">Iniciar Sesión</botton></li>
                 </ul>
             </nav>
             </header>
             
         
-        <footer th:fragment="footer" class="foter">
+        <footer th:fragment="footer" class="footer">
+            
             <p>&COPY; Todos los derechos reservados</p>
         </footer>
         </div>

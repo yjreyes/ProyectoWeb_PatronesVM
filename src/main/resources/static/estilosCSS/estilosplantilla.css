@@ -57,12 +57,18 @@ body {
     border-style: solid;
     color: var(--color-blanco);
     
+    
 }
 .logo_nav-link:hover{
     border-style: solid;
     color: var(--color-blanco);
 } 
-.foter{
-    margin-top: 100px;
+.footer{
+    
     text-align: center;
+    width: 100vw;
+    height: 30vh;
+    background-color: var(--color-azul);
+    margin-bottom: 0;
+    color: var(--color-blanco);
 }

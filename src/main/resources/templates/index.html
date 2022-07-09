@@ -4,11 +4,15 @@
       xmlns:th="http://www.thymeleaf.org">
      <head>
         <title>AutosCR</title>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8"/>           
+        <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
+        <link href="/estilosCSS/estilosInicio.css" rel="stylesheet" type="text/css"/>
      </head>
     <body>
         <header th:replace="layout/plantillaMenu :: menu"></header>
-        <div>Contenedor</div>
+        <div class="contenedor">
+            <div class="baner-inicio">Contenedor1</div>
+        </div>
         <footer th:replace="layout/plantillaMenu :: footer"></footer>
     </body>
 </html>
