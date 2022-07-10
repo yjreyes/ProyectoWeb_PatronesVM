@@ -5,33 +5,24 @@ import com.ProyectoWeb.service.UsuarioService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @Slf4j
-public class IndexController {
+public class UsuarioController {
 
     @Autowired
     private UsuarioService usuarioService;
-
-    @GetMapping("/")
-    public String inicio(Model model) {
-        var usuarios = usuarioService.getUsuarios();
-        model.addAttribute("usuarios", usuarios);
-        return "index";
-    }
-
-    @GetMapping("/nuevoUsuario")
+    
+    @GetMapping("/usuario/nuevo")
     public String nuevoUsuario(Usuario usuario) {
-        return "registrarUsuario";
+        return "usuario/modificar";
     }
 
-    @PostMapping("/guardarUsuario")
+    @PostMapping("/usuario/guardar")
     public String guardarUsuario(Usuario usuario) {
         usuarioService.save(usuario);
         return "redirect:/";
     }
-
 }

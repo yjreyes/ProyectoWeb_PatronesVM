@@ -18,19 +18,22 @@ public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idusuario;
-    
+
     String nombre;
     String apellidos;
     String correo;
+    String cedula;
     String telefono;
+    String contraseña;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellidos, String correo, String telefono) {
+    public Usuario(String nombre, String apellidos, String correo, String cedula, String telefono) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
+        this.cedula = cedula;
         this.telefono = telefono;
     }
 
