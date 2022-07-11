@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>AutoCR</title>
+        <meta charset="UTF-8">
+        <link href="/estilosCSS/estilosInicio.css" rel="stylesheet" type="text/css"/>
+        <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantillaMenu :: menu"></header>
+        <div class="contenedor">
+            <h2>Lista de vehiculos</h2>
+            <div th:if="${vehiculos != null and !vehiculos.empty}">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Modelo:</th>
+                            <th>Marca:</th>
+                            <th>Anno:</th>
+                            <th>Kilometraje:</th>
+                            <th>Precio:</th>
+                            <th>Modificar:</th>
+                            <th>Eliminar:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="vehiculo : ${vehiculos}">
+                            <td th:text="${vehiculo.modelo}"></td>
+                            <td th:text="${vehiculo.marca}"></td>
+                            <td th:text="${vehiculo.anno}"></td>
+                            <td th:text="${vehiculo.kilometraje}"></td>
+                            <td th:text="${#numbers.formatDecimal(vehiculo.precio,3,2)}"
+                                style="text-align: right"></td>
+                            <td><a th:href="@{/vehiculo/modificar/}+${vehiculo.idVehiculo}">Modificar</a></td>
+                            <td><a th:href="@{/vehiculo/eliminar/}+${vehiculo.idVehiculo}">Eliminar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <a th:href="@{/menu}">Salir</a>
+            </div>
+            <div th:if="${vehiculos == null or vehiculos.empty}">
+                No tenemos lista de vehiculos que mostrar...
+                <br>
+                <a th:href="@{/menu}">Salir</a>
+            </div>
+        </div>
+        <footer th:replace="layout/plantillaMenu :: footer"/>
+    </body>
+</html>

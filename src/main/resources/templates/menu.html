@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>AuroCR</title>
+        <meta charset="UTF-8">
+            <link href="/estilosCSS/estilosInicio.css" rel="stylesheet" type="text/css"/>
+            <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantillaMenu :: menu"></header>
+        <nav class="contenedor">
+            <a th:href="@{/vehiculo/nuevo}">Agregar Vehiculo</a>
+            <br/>
+            <a th:href="@{/vehiculo/listado}">Consultar Vehiculo</a>
+            <br/>
+            <a th:href="@{/}">Salir</a>
+        </nav>
+        <footer th:replace="layout/plantillaMenu :: footer"/>
+    </body>
+</html>
