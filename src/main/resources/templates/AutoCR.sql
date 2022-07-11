@@ -20,4 +20,19 @@ flush privileges;
 use AutoCR;
 drop table usuario;
 
+CREATE TABLE `AutoCR`.`vehiculo`(
+id_vehiculo int not null auto_increment,
+modelo varchar(15) not null,
+marca varchar(15) not null,
+anno int not null,
+kilometraje int null,
+precio double not null,
+primary key(id_vehiculo))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_eo_0900_ai_ci;
+
 select * from usuario;
+
+select * from vehiculo;
+drop table vehiculo;

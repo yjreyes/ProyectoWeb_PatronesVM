@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>AutoCR</title>
+        <meta charset="UTF-8">
+        <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
+        <link href="/estilosCSS/estilosInicio.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantillaMenu :: menu"></header>
+        <div class="contenedor">
+            <h2>Registro de Vehiculo</h2>
+            <hr>
+            <form th:action="@{/vehiculo/guardar}"
+                  method="post"
+                  th:object="${vehiculo}">
+                <input type="hidden" name="idvehiculo" th:field="*{idVehiculo}"/>
+
+                <label for="modelo">Modelo:</label>
+                <input type="text" name="modelo" th:field="*{modelo}"/>
+                <br>
+
+                <label for="marca">Marca:</label>
+                <input type="text" name="marca" th:field="*{marca}"/>
+                <br>
+
+                <label for="anno">Año:</label>
+                <input type="number" name="anno" th:field="*{anno}"/>
+                <br>
+
+                <label for="kilometraje">Kilometraje:</label>
+                <input type="number" name="kilometraje" th:field="*{kilometraje}"/>
+                <br>
+
+                <label for="precio">Precio:</label>
+                <input type="number" name="precio" th:field="*{precio}"/>
+                <br>
+
+                <input type="submit" name="Guardar" value="Guardar"/>
+                <a th:href="@{/menu}">Cancelar</a>
+                <hr>
+            </form>
+        </div>
+        <footer th:replace="layout/plantillaMenu :: footer"/>
+    </body>
+</html>
