@@ -9,17 +9,17 @@
 
     </head>
     <body>
-        <div class="contenedor">
+        
             <header class="header" th:fragment="menu">
                 <nav class="nav">
                     <a th:href="@{/}" class="logo_nav-link">AutosCR</a>
                     <ul class="ul-menu">
-                        <li class="li-menu"><a  th:href="@{/}">MiCarrito</a></li>
-                        <li class="li-menu"><a  th:href="@{/}">Compra</a></li>
-                        <li class="li-menu"><a  th:href="@{/}">Alquiler</a></li>
-                        <li class="li-menu"><a  th:href="@{/}">MiReserva</a></li>
-                        <li class="li-menu"><a  th:href="@{/}">Ayuda</a></li>
-                        <li><botton class="li-menu" th:href="@{/}">Iniciar Sesión</botton></li>
+                        <li><a  th:href="@{/}">MiCarrito</a></li>
+                        <li><a  th:href="@{/vehiculo/listado}">Compra</a></li>
+                        <li><a  th:href="@{/}">Alquiler</a></li>
+                        <li><a  th:href="@{/}">MiReserva</a></li>
+                        <li><a  th:href="@{/}">Ayuda</a></li>
+                        <li><a  th:href="@{/}" class="boton">Iniciar Sesión</a></li>
                     </ul>
                 </nav>
             </header>
@@ -29,6 +29,6 @@
 
                 <p>&COPY; Todos los derechos reservados</p>
             </footer>
-        </div>
+        
     </body>
 </html>

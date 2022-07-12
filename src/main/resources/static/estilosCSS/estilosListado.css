@@ -1,0 +1,7 @@
+
+.contenedor{
+    margin-top: 10vh;
+    width: 100vw;
+    height: 200vh;
+    color: var(--color-azul);
+}

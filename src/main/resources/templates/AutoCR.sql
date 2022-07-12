@@ -1,5 +1,7 @@
 CREATE SCHEMA `AutoCR`;
 
+use AutoCR;
+
 CREATE TABLE `AutoCR`.`usuario`(
 idusuario int not null auto_increment,
 nombre varchar(20) not null,
@@ -17,8 +19,8 @@ create user 'admin'@'%' identified by 'admin123';
 grant all privileges on AutoCR.* to 'admin'@'%';
 flush privileges;
 
-use AutoCR;
-drop table usuario;
+
+-- drop table usuario;
 
 CREATE TABLE `AutoCR`.`vehiculo`(
 id_vehiculo int not null auto_increment,
@@ -35,4 +37,4 @@ COLLATE = utf8mb4_eo_0900_ai_ci;
 select * from usuario;
 
 select * from vehiculo;
-drop table vehiculo;
+-- drop table vehiculo;
