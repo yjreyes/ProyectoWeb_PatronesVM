@@ -14,7 +14,7 @@
     <name>ProyectoWeb</name>
     <description>Proyecto Final del Curso Web y Ptrones, alquiler y venta de autos</description>
     <properties>
-        <java.version>18</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
