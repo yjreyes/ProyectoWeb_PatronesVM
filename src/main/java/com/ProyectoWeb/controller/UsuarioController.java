@@ -19,6 +19,10 @@ public class UsuarioController {
     public String nuevoUsuario(Usuario usuario) {
         return "usuario/modificar";
     }
+    @GetMapping("/usuario/login")
+    public String login(){
+        return "usuario/login";
+    }
 
     @PostMapping("/usuario/guardar")
     public String guardarUsuario(Usuario usuario) {

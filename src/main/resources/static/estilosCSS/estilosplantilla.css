@@ -52,8 +52,8 @@ body {
 .ul-menu .boton {
     text-decoration: none;
     padding: 10px 20px;
-    color: var(--color-azul);
-    background-color: var(--color-celesteclaro);
+    color: var(--color-blanco);
+    background-color: var(--color-naranja);
     border-radius: 20px;
     margin-right: 20px;
     
@@ -69,7 +69,7 @@ body {
     outline: solid var(--color-naranja);  
 }
 .ul-menu .boton:hover{
-    outline: solid var(--color-naranja);  
+    outline: solid var(--color-celesteoscuro);  
 }
 .logo_nav-link:hover{
     outline: solid var(--color-naranja);

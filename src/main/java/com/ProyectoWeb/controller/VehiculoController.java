@@ -51,5 +51,9 @@ public class VehiculoController {
         vehiculoService.delete(vehiculo);
         return "redirect:/menu";
     }
+    @GetMapping("/vehiculo/alquila")
+    public String alquila(){
+        return "vehiculo/alquila";
+    }
 
 }

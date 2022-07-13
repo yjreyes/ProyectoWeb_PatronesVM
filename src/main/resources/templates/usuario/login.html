@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>TODO supply a title</title>
+        <title>AutosCR</title>
         <meta charset="UTF-8">
-        <link href="../static/estilosCSS/estiloLogin.css" rel="stylesheet" type="text/css"/>
+        <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
+        <link href="/estilosCSS/estiloLogin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-
-        <h1>AutoCR</h1>
-        
+        <header th:replace="layout/plantillaMenu :: menu"></header>
         <div id="cuadro">
 
             <form>
@@ -39,10 +39,6 @@
         <br/><br/>
         <br/><br/>
         <br/><br/>
-
-        <footer>
-
-            <p>&COPY; Todos los derechos reservados</p>
-        </footer>
+        <footer th:replace="layout/plantillaMenu :: footer"></footer>
     </body>
 </html>

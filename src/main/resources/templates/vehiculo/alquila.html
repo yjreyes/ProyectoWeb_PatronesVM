@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>AutosCR</title>
+        <meta charset="UTF-8"/>           
+        <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
+        <link href="/estilosCSS/estilosAlquila.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantillaMenu :: menu"></header>
+        <div class="contenedor">
+            <div class="conten-busqueda">                
+                    <div class="busqueda-select">
+                        <h2>Alquila nuestros autos desde cualquier parte del país</h2>
+                        <select name="busqueda">                            
+                            <option value="selec">Salecciona tu sucursal más cercana</option>
+                            <option value="sanJose">San José</option>
+                            <option value="alajuela">Alajuela</option>
+                            <option value="cartago">Cartago</option>
+                            <option value="guanacaste">Guanacaste</option>
+                            <option value="Heredia">Heredia</option>
+                            <option value="puntarenas">Puntarenas</option>
+                            <option value="limon">Limón</option>
+                        </select>
+                        <form class="form-fecha">
+                            <input type="datetime-local">
+                            <input type="datetime-local">
+                        </form>
+                        <div class="btn-buscar">
+                            <a th:href="index.html">Buscar</a>
+                        </div>
+                        
+                        
+                    </div>                
+            </div>
+            <h2>Alquila desde ₡25000/hora</h2>
+            <section class="art-compra">                                
+                <article>                    
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhcnJvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60">
+                    <div class="info-compra">
+                       <h3>Comprar</h3>
+                       <p>Marca: xxxxx</p>
+                       <p>Modelo: xxxx</p>
+                       <p>Costo: $12000</p>
+                       <p>Adquisición: compra</p>
+                       
+                    </div>                      
+                </article>
+                <article>                    
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhcnJvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60">
+                    <div class="info-compra">
+                       <h3>Comprar</h3>
+                       <p>Marca: xxxxx</p>
+                       <p>Modelo: xxxx</p>
+                       <p>Costo: $12000</p>
+                       <p>Adquisición: compra</p>
+                       
+                    </div>                      
+                </article>
+                <article>                    
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhcnJvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60">
+                    <div class="info-compra">
+                       <h3>Comprar</h3>
+                       <p>Marca: xxxxx</p>
+                       <p>Modelo: xxxx</p>
+                       <p>Costo: $12000</p>
+                       <p>Adquisición: compra</p>
+                       
+                    </div>                      
+                </article>
+                <article>                    
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhcnJvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60">
+                    <div class="info-compra">
+                       <h3>Comprar</h3>
+                       <p>Marca: xxxxx</p>
+                       <p>Modelo: xxxx</p>
+                       <p>Costo: $12000</p>
+                       <p>Adquisición: compra</p>
+                       
+                    </div>                      
+                </article>                
+                
+            </section>
+        </div>
+        <footer th:replace="layout/plantillaMenu :: footer"></footer>
+    </body>
+</html>
