@@ -14,19 +14,21 @@ public class UsuarioController {
 
     @Autowired
     private UsuarioService usuarioService;
-    
+
     @GetMapping("/usuario/nuevo")
     public String nuevoUsuario(Usuario usuario) {
         return "usuario/modificar";
     }
+
     @GetMapping("/usuario/login")
-    public String login(){
+    public String login() {
         return "usuario/login";
     }
 
     @PostMapping("/usuario/guardar")
     public String guardarUsuario(Usuario usuario) {
         usuarioService.save(usuario);
-        return "redirect:/";
+        return "redirect:/usuario/login";
     }
+
 }

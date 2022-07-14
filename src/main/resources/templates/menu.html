@@ -6,16 +6,25 @@
         <meta charset="UTF-8">
             <link href="/estilosCSS/estilosInicio.css" rel="stylesheet" type="text/css"/>
             <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
+            <link href="/estilosCSS/estiloLogin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:replace="layout/plantillaMenu :: menu"></header>
-        <nav class="contenedor">
-            <a th:href="@{/vehiculo/nuevo}">Agregar Vehiculo</a>
+        <nav id="cuadroMenu">
+            <form th:action="@{/vehiculo/nuevo}">
+                <input type="submit" value="Agregar Vehiculo" id="botonFormulario"/>
+            </form>
             <br/>
-            <a th:href="@{/vehiculo/listado}">Consultar Vehiculo</a>
+            <form th:action="@{/vehiculo/listado}">
+                <input type="submit" value="Consultar Vehiculo" id="botonFormulario"/>
+            </form>
             <br/>
-            <a th:href="@{/}">Salir</a>
+            <form th:action="@{/}">
+                <input type="submit" value="Salir" id="botonFormulario"/>
+            </form>
         </nav>
-        <footer th:replace="layout/plantillaMenu :: footer"/>
+        <footer>
+            <p>&COPY; Todos los derechos reservados</p>
+        </footer>
     </body>
 </html>

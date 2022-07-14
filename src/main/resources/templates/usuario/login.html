@@ -5,37 +5,37 @@
     <head>
         <title>AutosCR</title>
         <meta charset="UTF-8">
-        
-        <link href="/estilosCSS/estiloLogin.css" rel="stylesheet" type="text/css"/>
+
+            <link href="/estilosCSS/estiloLogin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-       
+
         <h1>AutoCR</h1>
-        
+
         <div id="cuadro">
 
-            <form>
+            <form th:action="@{/}">
                 <p id="titulo" style="font-family: sans-serif" >INICIAR SESIÓN</p>
                 <hr>
-                <br/><br/>
-                <label id="subtitulo1" style="font-family: sans-serif" >CORREO ELECTRÓNICO</label>
-                <br/><br/>
-                <input type="text" class="entrada"/>
-                <br/><br/>
-                <label id="subtitulo2" style="font-family: sans-serif" >CONTRASEÑA</label>
-                <br/><br/>
-                <input type="password" class="entrada"/>
-                <br/><br/>
-                <input type="submit" value="Iniciar Sesión" id="boton"/>
-                <br/><br/>
-               
-                
+                    <br/><br/>
+                    <label id="subtitulo1" style="font-family: sans-serif" >CORREO ELECTRÓNICO</label>
+                    <br/><br/>
+                    <input type="text" class="entrada"/>
+                    <br/><br/>
+                    <label id="subtitulo2" style="font-family: sans-serif" >CONTRASEÑA</label>
+                    <br/><br/>
+                    <input type="password" class="entrada"/>
+                    <br/><br/>
+                    <input type="submit" value="Iniciar Sesión" id="boton"/>
+                    <br/><br/>
+            </form>
+            <form th:action="@{/}">
                 <input type="submit" value="Invitado" id="boton_invitado"/>
             </form>
             <br/>
             <p id="info" style="font-family: sans-serif ">No tienes cuenta?</p>
-            <p id="marca" style="font-family: sans-serif ">Registrarse</p>
-            <p id="logAdmin" style="font-family: sans-serif ">Administrador</p>
+            <a th:href="@{/usuario/nuevo}" id="marca" style="font-family: sans-serif ">Registrarse</a>
+            <a th:href="@{/loginAdmin}" id="logAdmin" style="font-family: sans-serif ">Administrador</p>
 
         </div>
         <br/><br/>
@@ -45,6 +45,6 @@
 
             <p>&COPY; Todos los derechos reservados</p>
         </footer>
-        
+
     </body>
 </html>

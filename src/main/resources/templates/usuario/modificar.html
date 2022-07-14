@@ -11,34 +11,37 @@
         <header th:replace="layout/plantillaMenu :: menu"></header>
         <div class="contenedor">
             <hr>
-            <form th:action="@{/vehiculo/guardar}"
+            <form th:action="@{/usuario/guardar}"
                   method="post"
-                  th:object="${vehiculo}">
-                <input type="hidden" name="idvehiculo" th:field="*{idVehiculo}"/>
+                  th:object="${usuario}">
+                <input type="hidden" name="idusuario" th:field="*{idusuario}"/>
                 <br/>
-                <label for="modelo">Modelo:</label>
-                <input type="text" name="modelo" th:field="*{modelo}"/>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" th:field="*{nombre}"/>
                 <br/><br/>
 
-                <label for="marca">Marca:</label>
-                <input type="text" name="marca" th:field="*{marca}"/>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" name="apellidos" th:field="*{apellidos}"/>
                 <br/><br/>
 
-                <label for="anno">Año:</label>
-                <input type="number" name="anno" th:field="*{anno}"/>
+                <label for="correo">Correo:</label>
+                <input type="email" name="correo" th:field="*{correo}"/>
                 <br/><br/>
 
-                <label for="kilometraje">Kilometraje:</label>
-                <input type="number" name="kilometraje" th:field="*{kilometraje}"/>
+                <label for="cedula">Cédula:</label>
+                <input type="text" name="cedula" th:field="*{cedula}"/>
                 <br/><br/>
 
-                <label for="precio">Precio:</label>
-                <input type="number" name="precio" th:field="*{precio}"/>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" name="telefono" th:field="*{telefono}"/>
                 <br/><br/>
 
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" name="contraseña" th:field="*{contraseña}"/>
+                <br/><br/>
                 <input type="submit" name="guardar" value="Guardar" id="botonFormulario"/>
             </form>
-            <form th:action="@{/menu}">
+            <form th:action="@{/usuario/login}">
                 <input type="submit" value="Cancelar" id="botonFormulario"/>
                 <hr>
             </form>

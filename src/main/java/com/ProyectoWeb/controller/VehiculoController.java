@@ -55,5 +55,10 @@ public class VehiculoController {
     public String alquila(){
         return "vehiculo/alquila";
     }
+    
+    @GetMapping("/loginAdmin")
+    public String Admin(){
+        return "loginAdmin";
+    }
 
 }
