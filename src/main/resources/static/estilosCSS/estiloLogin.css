@@ -108,4 +108,23 @@ footer{
     border-left:  10px solid #272343;
 }
 
+#botonFormulario{
+    width: 150px;
+    height: 45px;
+    border-radius: 6px;
+    background-color: #5585B5;
+    color:white;
+    font-size: 15px;
+    
+}
+
+#cuadroMenu{
+    width: 330px;
+    color: white;
+    margin:  auto;
+    margin-top: 120px;
+    padding: 5px 5px 30px 5px;
+    border-radius: 10px;    
+}
+
 
