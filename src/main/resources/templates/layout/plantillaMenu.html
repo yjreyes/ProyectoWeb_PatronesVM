@@ -14,12 +14,12 @@
                 <nav class="nav">
                     <a th:href="@{/}" class="logo_nav-link">AutosCR</a>
                     <ul class="ul-menu">
-                        <li><a  th:href="@{/}">MiCarrito</a></li>
-                        <li><a  th:href="@{/vehiculo/listado}">Compra</a></li>
-                        <li><a  th:href="@{/vehiculo/alquila}">Alquiler</a></li>
-                        <li><a  th:href="@{/}">MiReserva</a></li>
-                        <li><a  th:href="@{/}">Ayuda</a></li>
-                        <li><a  th:href="@{/usuario/login}" class="boton">Iniciar Sesión</a></li>
+                        <li><a  th:href="@{/}">[[#{plantillaMenu.micarrito}]]</a></li>
+                        <li><a  th:href="@{/vehiculo/listado}">[[#{plantillaMenu.compra}]]</a></li>
+                        <li><a  th:href="@{/vehiculo/alquila}">[[#{plantillaMenu.alquiler}]]</a></li>
+                        <li><a  th:href="@{/}">[[#{plantillaMenu.mireserva}]]</a></li>
+                        <li><a  th:href="@{/}">[[#{plantillaMenu.ayuda}]]</a></li>
+                        <li><a  th:href="@{/usuario/login}" class="boton">[[#{plantillaMenu.iniciarsesion}]]</a></li>
                     </ul>
                 </nav>
             </header>
@@ -27,7 +27,10 @@
 
             <footer th:fragment="footer" class="footer">
 
-                <p>&COPY; Todos los derechos reservados</p>
+                <p>&COPY [[#{plantillaMenu.derechos}]]|
+                    <a th:href="@{/(lang=es)}">ES</a>|
+                    <a th:href="@{/(lang=en)}">EN</a>
+                </p>
             </footer>
         
     </body>
