@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>AutosCR</title>
-        <meta charset="UTF-8">
-
-            <link href="/estilosCSS/estiloLogin.css" rel="stylesheet" type="text/css"/>
-    </head>
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security"></head>
     <body>
 
         <h1>AutoCR</h1>
@@ -37,9 +32,6 @@
         <br/><br/>
         <br/><br/>
 
-        <footer>
-
-            <p>&COPY; Todos los derechos reservados</p>
-        </footer>
+        <footer th:replace="layout/plantillaMenu :: footer"></footer>
     </body>
 </html>

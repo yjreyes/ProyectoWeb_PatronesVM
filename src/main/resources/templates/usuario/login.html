@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-    <head>
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+    <head th:replace="layout/plantillaMenu :: head">
         <title>AutosCR</title>
         <meta charset="UTF-8">
 
@@ -41,7 +42,7 @@
         <br/><br/>
         <br/><br/>
         <br/><br/>
-        <footer>
+        <footer th:replace="layout/plantillaMenu :: footer">
 
             <p>&COPY; Todos los derechos reservados</p>
         </footer>
