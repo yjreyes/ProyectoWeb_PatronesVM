@@ -1,13 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>AuroCR</title>
-        <meta charset="UTF-8">
-            <link href="/estilosCSS/estilosInicio.css" rel="stylesheet" type="text/css"/>
-            <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
-            <link href="/estilosCSS/estiloLogin.css" rel="stylesheet" type="text/css"/>
-    </head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+   <head th:replace="layout/plantillaMenu :: head"></head>
     <body>
         <header th:replace="layout/plantillaMenu :: menu"></header>
         <nav id="cuadroMenu">
@@ -23,7 +18,7 @@
                 <input type="submit" value="Salir" id="botonFormulario"/>
             </form>
         </nav>
-        <footer>
+        <footer th:replace="layout/plantillaMenu :: footer">
             <p>&COPY; Todos los derechos reservados</p>
         </footer>
     </body>

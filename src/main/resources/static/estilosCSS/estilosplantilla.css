@@ -81,5 +81,8 @@ body {
     height: 30vh;
     background-color: var(--color-azul);
     margin-bottom: 0;
-    color: var(--color-blanco);
+    color: var(--color-blanco);    
+}
+.footer svg{
+    margin: 20px 30px;
 }

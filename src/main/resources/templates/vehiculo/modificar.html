@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-    <head>
+<<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+    <head th:replace="layout/plantillaMenu :: head">
         <title>AutoCR</title>
         <meta charset="UTF-8">
         <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
@@ -43,7 +45,7 @@
                 <hr>
             </form>
         </div>
-        <footer>
+        <footer th:replace="layout/plantillaMenu :: footer">
             <p>&COPY; Todos los derechos reservados</p>
         </footer>
     </body>

@@ -1,13 +1,8 @@
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>AutosCR</title>
-        <meta charset="UTF-8"/>           
-        <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
-        <link href="/estilosCSS/estilosInicio.css" rel="stylesheet" type="text/css"/>
-    </head>
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+    <head th:replace="layout/plantillaMenu :: head"></head>
     <body>
         <header th:replace="layout/plantillaMenu :: menu"></header>
         <div class="contenedor">
