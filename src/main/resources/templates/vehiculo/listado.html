@@ -6,19 +6,19 @@
     <body>
         <header th:replace="layout/plantillaMenu :: menu"></header>
         <div class="contenedor">
-            <h2>Lista de vehiculos</h2>
+            <h2>[[#{vehiculo.titulo}]]</h2>
             <div th:if="${vehiculos != null and !vehiculos.empty}">
                 <table border=".5">
                     <thead>
                         <tr>
-                            <th>Modelo:</th>
-                            <th>Marca:</th>
-                            <th>Anno:</th>
-                            <th>Kilometraje:</th>
-                            <th>Precio:</th>
-                            <th>Modificar:</th>
-                            <th>Eliminar:</th>
-                            <th>Imagen Del Auto</th>
+
+                            <th>[[#{vehiculo.modelo}]]</th>
+                            <th>[[#{vehiculo.marca}]]</th>
+                            <th>[[#{vehiculo.anno}]]</th>
+                            <th>[[#{vehiculo.kilometraje}]]</th>
+                            <th>[[#{vehiculo.precio}]]</th>
+                            <th>[[#{accion.eliminar}]]</th>
+                            <th>[[#{accion.actualizar}]]</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,10 +37,10 @@
                     </tbody>
                 </table>
                 <br>
-                <a th:href="@{/menu}">Salir</a>
+                <a th:href="@{/menu}">[[#{plantilla.logout}]]</a>
             </div>
             <div th:if="${vehiculos == null or vehiculos.empty}">
-                No tenemos lista de vehiculos que mostrar...
+                [[#{index.titulo}]]
                 <br>
                 <a th:href="@{/}">Salir</a>
             </div>
