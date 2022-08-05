@@ -14,7 +14,7 @@ h1{
 }
 
 #cuadro{
-    width: 330px;
+    width: 400px;
     background: #272343;
     color: white;
     margin:  auto;
@@ -28,6 +28,21 @@ h1{
     
 }
 
+
+#cuadroadmin{
+    width: 330px;
+    background: #272343;
+    color: white;
+    margin:  auto;
+    margin-top: 120px;
+    padding: 5px 5px 30px 5px;
+    border-top: 35px solid #272343;
+    border-right: 35px solid #272343;
+    border-left:  35px solid #272343;
+    border-radius: 10px;
+    
+    
+}
 .entrada{
     width: 320px;
     height: 35px;
