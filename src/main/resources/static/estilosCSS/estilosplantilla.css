@@ -38,7 +38,7 @@ body {
 }
 .ul-menu{
     display: flex;
-    width: 50%;
+    width: 60%;
     justify-content: space-around;
 }
 .ul-menu li{
