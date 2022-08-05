@@ -17,8 +17,8 @@
                             <th>[[#{vehiculo.anno}]]</th>
                             <th>[[#{vehiculo.kilometraje}]]</th>
                             <th>[[#{vehiculo.precio}]]</th>
-                            <th>[[#{accion.eliminar}]]</th>
-                            <th>[[#{accion.actualizar}]]</th>
+                            <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.eliminar}]]</th>
+                            <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.actualizar}]]</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,15 +29,15 @@
                             <td th:text="${vehiculo.kilometraje}"></td>
                             <td th:text="${#numbers.formatDecimal(vehiculo.precio,3,2)}"
                                 style="text-align: right"></td>
-                            <td><a th:href="@{/vehiculo/modificar/}+${vehiculo.idVehiculo}">Modificar</a></td>
-                            <td><a th:href="@{/vehiculo/eliminar/}+${vehiculo.idVehiculo}">Eliminar</a></td>
+                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/vehiculo/modificar/}+${vehiculo.idVehiculo}">Modificar</a></td>
+                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/vehiculo/eliminar/}+${vehiculo.idVehiculo}">Eliminar</a></td>
                             <td><img src="https://th.bing.com/th/id/OIP.sLxN1lxvjCcho41jSEZhCQHaE8?pid=ImgDet&rs=1"
                                      style="width: 200px;height: 200px;"/></td>                    
                         </tr>
                     </tbody>
                 </table>
                 <br>
-                <a th:href="@{/menu}">[[#{plantilla.logout}]]</a>
+                <a th:href="@{/}">[[#{plantilla.logout}]]</a>
             </div>
             <div th:if="${vehiculos == null or vehiculos.empty}">
                 [[#{index.titulo}]]

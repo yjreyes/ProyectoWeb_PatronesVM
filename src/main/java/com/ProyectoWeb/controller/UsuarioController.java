@@ -20,24 +20,22 @@ public class UsuarioController {
         return "usuario/modificar";
     }
 
-    @GetMapping("/usuario/login")
-    public String login() {
-        return "usuario/login";
-    }
-
     @PostMapping("/usuario/guardar")
     public String guardarUsuario(Usuario usuario) {
         usuarioService.save(usuario);
-        return "redirect:/usuario/login";
+        return "redirect:/login";
     }
+
     @GetMapping("/usuario/perfilUsuario")
     public String perfilUsuario() {
         return "usuario/perfilUsuario";
     }
+
     @GetMapping("/mensajes/exitoCompra")
     public String exitoCompra() {
         return "/mensajes/exitoCompra";
     }
+
     @GetMapping("/mensajes/exitoAlquila")
     public String exitoAlquila() {
         return "/mensajes/exitoAlquila";

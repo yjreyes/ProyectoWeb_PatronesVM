@@ -5,19 +5,17 @@
     <head th:replace="layout/plantillaMenu :: head">
         <title>AutoCR</title>
         <meta charset="UTF-8">
-        <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
-        <link href="/estilosCSS/estilosInicio.css" rel="stylesheet" type="text/css"/>
-        <link href="/estilosCSS/estiloLogin.css" rel="stylesheet" type="text/css"/>
+            <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
+            <link href="/estilosCSS/estilosInicio.css" rel="stylesheet" type="text/css"/>
+            <link href="/estilosCSS/estiloLogin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header th:replace="layout/plantillaMenu :: menu"></header>
-        <div class="contenedor">
-            <hr>
+        <h1>AutoCR</h1>
+        <div>
             <form th:action="@{/usuario/guardar}"
                   method="post"
                   th:object="${usuario}">
                 <input type="hidden" name="idusuario" th:field="*{idusuario}"/>
-                <br/>
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" th:field="*{nombre}"/>
                 <br/><br/>
@@ -43,7 +41,7 @@
                 <br/><br/>
                 <input type="submit" name="guardar" value="Guardar" id="botonFormulario"/>
             </form>
-            <form th:action="@{/usuario/login}">
+            <form th:action="@{/login}">
                 <input type="submit" value="Cancelar" id="botonFormulario"/>
                 <hr>
             </form>

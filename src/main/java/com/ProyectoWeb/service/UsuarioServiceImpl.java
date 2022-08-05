@@ -14,6 +14,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     private UsuarioDao usuarioDao;
 
     @Override
+    @Transactional(readOnly = true)
     public List<Usuario> getUsuarios() {
         return (List<Usuario>) usuarioDao.findAll();
     }
@@ -21,6 +22,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     @Transactional
     public void save(Usuario usuario) {
+        usuario.setRol(2);
         usuarioDao.save(usuario);
     }
 
@@ -31,9 +33,9 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public Usuario getUsuario(Usuario usuario) {
-       return usuarioDao.findById(usuario.getIdusuario()).orElse(null);
+        return usuarioDao.findById(usuario.getIdusuario()).orElse(null);
     }
 
 }
