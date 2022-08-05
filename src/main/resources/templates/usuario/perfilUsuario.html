@@ -1,37 +1,41 @@
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://thymeleaf.org/extras/spring-security">
    <head th:replace="layout/plantillaMenu :: head"></head>
-    <body>
-        <header th:replace="layout/plantillaMenu :: menu"></header>
-        <div class="contenedor">
-            <div class="conten-busqueda">                
-                    <div class="busqueda-select">
-                        <h2>[[#{plantillaMenu.alquilerinfo}]]</h2>
-                        <select name="busqueda">                            
-                            <option value="selec">[[#{plantillaMenu.alquilerselec}]]</option>
-                            <option value="sanJose">San José</option>
-                            <option value="alajuela">Alajuela</option>
-                            <option value="cartago">Cartago</option>
-                            <option value="guanacaste">Guanacaste</option>
-                            <option value="Heredia">Heredia</option>
-                            <option value="puntarenas">Puntarenas</option>
-                            <option value="limon">Limón</option>
-                        </select>
-                        <form class="form-fecha">
-                            <input type="datetime-local">
-                            <input type="datetime-local">
-                        </form>
-                        <div class="btn-buscar">
-                            <a th:href="index.html">[[#{plantillaMenu.alquilerbuscar}]]</a>
-                        </div>
-                        
-                        
-                    </div>                
+<body>
+    <header th:replace="layout/plantillaMenu :: menu"></header>
+    <div class="perfil-conten">
+        <div class="perfil-item">
+            <div class="foto-circulo">
+                <div class="foto-img">
+                    <img src="https://images.pexels.com/photos/4769490/pexels-photo-4769490.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                </div>
             </div>
-            <h2>[[#{plantillaMenu.alquilermensaje}]]</h2>
+            <h2><b>Usuario</b></h2>
+            <table border="1" class="info-user">
+                <tr>
+                    <td><b>Nombre:</b> </td>
+                    <td>Jimena</td>
+
+                </tr>
+                <tr>
+                    <td><b>Correo: </b></td>
+                    <td>jsoto@ejemplo.com</td>
+
+                </tr>
+                <tr>
+                    <td><b>Telefono: </b></td>
+                    <td>8989-8787</td>
+
+                </tr>
+                <tr>
+                    <td><b>Tipo: </b></td>
+                    <td> Cliente </td>
+
+                </tr>
+            </table>
+            <h2>Adquisiciones</h2>
             <section class="art-compras">                                
                 <article class="conten-art-compra">                    
                     <div class="info-compr">
@@ -60,8 +64,10 @@
                        <p>[[#{plantillaMenu.adquisicioncompra}]]</p>                       
                     </div>                      
                 </article>
-            </section>
+            </section><br><br>
+            <button class="btn-cerrar-perfil"><a href="index.html"><b>Cerrar Sesión</b></a></button>
         </div>
-        <footer th:replace="layout/plantillaMenu :: footer"></footer>
-    </body>
+    </div>
+    <footer th:replace="layout/plantillaMenu :: footer"></footer>
+</body>
 </html>

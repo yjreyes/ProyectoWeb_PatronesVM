@@ -23,14 +23,16 @@ body {
     height: 10vh;
     background-color: var(--color-azul);
     position: fixed;
+    z-index: 100;
+    padding-right: 20px;
     
     
 }
 .logo_nav-link{
-    color: var(--color-blanco);
+    color: var(--color-naranja);
     text-decoration: none;
-    font-size: 20px;
-    padding: 10px 20px;
+    font-size: 30px;
+    padding: 5px 10px;
     margin: -10px;
     margin-left: 20px; 
 }

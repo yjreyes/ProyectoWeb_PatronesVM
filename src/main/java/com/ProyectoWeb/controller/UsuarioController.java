@@ -30,5 +30,17 @@ public class UsuarioController {
         usuarioService.save(usuario);
         return "redirect:/usuario/login";
     }
+    @GetMapping("/usuario/perfilUsuario")
+    public String perfilUsuario() {
+        return "usuario/perfilUsuario";
+    }
+    @GetMapping("/mensajes/exitoCompra")
+    public String exitoCompra() {
+        return "/mensajes/exitoCompra";
+    }
+    @GetMapping("/mensajes/exitoAlquila")
+    public String exitoAlquila() {
+        return "/mensajes/exitoAlquila";
+    }
 
 }

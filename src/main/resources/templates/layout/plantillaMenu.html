@@ -23,13 +23,13 @@
         
             <header class="header" th:fragment="menu">
                 <nav class="nav">
-                    <a th:href="@{/}" class="logo_nav-link">AutosCR</a>
+                    <a th:href="@{/}" class="logo_nav-link"><b>AutosCR</b></a>
                     <ul class="ul-menu">
 
-                        <li><a  th:href="@{/}">[[#{plantillaMenu.micarrito}]]</a></li>
+                        <li><a  th:href="@{/vehiculo/detalleArticulo}">[[#{plantillaMenu.micarrito}]]</a></li>
                         <li><a  th:href="@{/vehiculo/listado}">[[#{plantillaMenu.compra}]]</a></li>
                         <li><a  th:href="@{/vehiculo/alquila}">[[#{plantillaMenu.alquiler}]]</a></li>
-                        <li><a  th:href="@{/}">[[#{plantillaMenu.mireserva}]]</a></li>
+                        <li><a  th:href="@{/usuario/perfilUsuario}">[[#{plantillaMenu.mireserva}]]</a></li>
                         <li><a  th:href="@{/}">[[#{plantillaMenu.ayuda}]]</a></li>
                         <li><a  th:href="@{/usuario/login}" class="boton">[[#{plantillaMenu.iniciarsesion}]]</a></li>
                     </ul>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+   <head th:replace="layout/plantillaMenu :: head"></head>
+    <body>
+        <header th:replace="layout/plantillaMenu :: menu"></header>
+        <div class="conten-detalle-vh">
+            <div class="conten-info">
+                <div class="div-img">
+                    <img src="https://images.kavak.services/images/25295/suzuki-vitara-glx2016-frontal-lateral-piloto-cercana-1604462391998.jpg">
+                </div>
+                <div class="div-info">
+                    <h2>Suzuki Vitara 2016</h2>
+                    <table border="1" class="info-auto">
+                        <tr>
+                            <td><b>Kilometraje:</b> </td>
+                            <td>58,400km</td>
+
+                        </tr>
+                        <tr>
+                            <td><b>Precio: </b></td>
+                            <td>$30000</td>
+
+                        </tr>
+                        <tr>
+                            <td><b>Transmisión: </b></td>
+                            <td>Automatica</td>
+
+                        </tr>
+                        <tr>
+                            <td><b>Puertas: </b></td>
+                            <td> 4 </td>
+
+                        </tr>
+                    </table>
+                    <button class="btn-add"><a th:href="@{/mensajes/exitoCompra}"><b>Agregar al Carrito</b></a></button>
+                </div>
+
+            </div>
+        </div>
+        <footer th:replace="layout/plantillaMenu :: footer"></footer>
+    </body>
+</html>

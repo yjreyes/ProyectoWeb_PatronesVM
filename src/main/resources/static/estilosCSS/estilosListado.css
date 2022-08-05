@@ -1,7 +1,6 @@
 
 .contenedor{
     margin-top: 10vh;
-    width: 100vw;
-    height: 200vh;
+    box-sizing: border-box;
     color: var(--color-azul);
 }

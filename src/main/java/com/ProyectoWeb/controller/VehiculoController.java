@@ -60,5 +60,9 @@ public class VehiculoController {
     public String Admin(){
         return "loginAdmin";
     }
+    @GetMapping("/vehiculo/detalleArticulo")
+    public String detalleArticulo() {
+        return "vehiculo/detalleArticulo";
+    }
 
 }

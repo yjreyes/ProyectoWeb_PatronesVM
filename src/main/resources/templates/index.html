@@ -5,121 +5,99 @@
     <head th:replace="layout/plantillaMenu :: head"></head>
     <body>
         <header th:replace="layout/plantillaMenu :: menu"></header>
-        <div class="contenedor">
-            <div class="baner-inicio">
-                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
+        <div class="conten-inicio">
+            <div class="baner-inicio">                
                     <div class="bienvenida">
-                       <b>[[#{plantillaMenu.bienvenida}]]</b>
+                        <b style="color: #f95959;">[[#{plantillaMenu.bienvenida}]]</b>
                        <br>
-                           [[#{plantillaMenu.informacion1}]]
+                          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" 
+                               class="bi bi-check2-square" viewBox="0 0 16 16">
+                          <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
+                          <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
+                          </svg> [[#{plantillaMenu.informacion1}]]
                            <br>
-                            [[#{plantillaMenu.informacion2}]]
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" 
+                               class="bi bi-check2-square" viewBox="0 0 16 16">
+                          <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
+                          <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
+                          </svg> [[#{plantillaMenu.informacion2}]]
                             <br>
-                            [[#{plantillaMenu.informacion3}]]
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" 
+                               class="bi bi-check2-square" viewBox="0 0 16 16">
+                          <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
+                          <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
+                          </svg> [[#{plantillaMenu.informacion3}]]
                             <br>
-                            [[#{plantillaMenu.informacion4}]]
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" 
+                               class="bi bi-check2-square" viewBox="0 0 16 16">
+                          <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
+                          <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
+                          </svg> [[#{plantillaMenu.informacion4}]]
                     </div>                
-            </div>
-            <h1>[[#{index.titulo}]]</h1>
-            <br><br>
+            </div>            
             <h2> [[#{plantillaMenu.venta}]]</h2>
-            <section class="art-compra">                                
-                <article>                    
-                    <img src="https://images.unsplash.com/photo-1610399214658-52b9fdea4627?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80">
-                    <div class="info-compra">
+            <section class="art-compras">                                
+                <article class="conten-art-compra">                    
+                    <div class="info-compr">
                        <h3>[[#{plantillaMenu.compra}]]</h3>
                        <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
                        <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
                        <p>[[#{plantillaMenu.costo}]]$12000</p>
-                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>
-                       
+                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>                       
+                    </div>                                          
+                </article>
+                <article class="conten-art-compra">                                        
+                    <div class="info-compr">
+                       <h3>[[#{plantillaMenu.compra}]]</h3>
+                       <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
+                       <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
+                       <p>[[#{plantillaMenu.costo}]]$12000</p>
+                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>                       
                     </div>                      
                 </article>
-                <article>                    
-                    <img src="https://images.unsplash.com/photo-1610399214658-52b9fdea4627?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80">
-                    <div class="info-compra">
+                <article class="conten-art-compra">                                        
+                    <div class="info-compr">
                        <h3>[[#{plantillaMenu.compra}]]</h3>
                        <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
                        <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
                        <p>[[#{plantillaMenu.costo}]]$12000</p>
-                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>
-                       
+                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>                       
                     </div>                      
                 </article>
-                <article>                    
-                    <img src="https://images.unsplash.com/photo-1610399214658-52b9fdea4627?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80">
-                    <div class="info-compra">
-                       <h3>[[#{plantillaMenu.compra}]]</h3>
-                       <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.costo}]]$12000</p>
-                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>
-                       
-                    </div>                      
-                </article>
-                <article>                    
-                    <img src="https://images.unsplash.com/photo-1610399214658-52b9fdea4627?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80">
-                    <div class="info-compra">
-                       <h3>[[#{plantillaMenu.compra}]]</h3>
-                       <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.costo}]]$12000</p>
-                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>
-                       
-                    </div>                      
-                </article>                
-                
             </section>
             <br><br><br>
             <h2> [[#{plantillaMenu.renta}]]</h2>
-            <section class="art-compra">                
-                <article>                    
-                    <img src="https://images.unsplash.com/photo-1610399214658-52b9fdea4627?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80">
-                    <div class="info-compra">
-                       <h3>[[#{plantillaMenu.alquilar}]]</h3>
+             <section class="art-compras">                                
+                <article class="conten-art-compra">                    
+                    <div class="info-compr">
+                       <h3>[[#{plantillaMenu.compra}]]</h3>
                        <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
                        <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
                        <p>[[#{plantillaMenu.costo}]]$12000</p>
-                       <p>[[#{plantillaMenu.adquisicionalquilar}]]</p>
-                       
+                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>                       
+                    </div>                                          
+                </article>
+                <article class="conten-art-compra">                                        
+                    <div class="info-compr">
+                       <h3>[[#{plantillaMenu.compra}]]</h3>
+                       <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
+                       <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
+                       <p>[[#{plantillaMenu.costo}]]$12000</p>
+                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>                       
                     </div>                      
                 </article>
-                <article>                    
-                    <img src="https://images.unsplash.com/photo-1610399214658-52b9fdea4627?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80">
-                    <div class="info-compra">
-                       <h3>[[#{plantillaMenu.alquilar}]]</h3>
+                <article class="conten-art-compra">                                        
+                    <div class="info-compr">
+                       <h3>[[#{plantillaMenu.compra}]]</h3>
                        <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
                        <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
                        <p>[[#{plantillaMenu.costo}]]$12000</p>
-                       <p>[[#{plantillaMenu.adquisicionalquilar}]]</p>
-                       
-                    </div>                      
-                </article>
-                <article>                    
-                    <img src="https://images.unsplash.com/photo-1610399214658-52b9fdea4627?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80">
-                    <div class="info-compra">
-                       <h3>[[#{plantillaMenu.alquilar}]]</h3>
-                       <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.costo}]]$12000</p>
-                       <p>[[#{plantillaMenu.adquisicionalquilar}]]</p>
-                       
-                    </div>                      
-                </article>
-                <article>                    
-                    <img src="https://images.unsplash.com/photo-1610399214658-52b9fdea4627?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80">
-                    <div class="info-compra">
-                       <h3>[[#{plantillaMenu.alquilar}]]</h3>
-                       <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.costo}]]$12000</p>
-                       <p>[[#{plantillaMenu.adquisicionalquilar}]]</p>
-                       
+                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>                       
                     </div>                      
                 </article>
             </section>
         </div>
-        <br><br><br><br><br><br><br><br><br><br>
+        
         <footer th:replace="layout/plantillaMenu :: footer"></footer>
     </body>
 </html>
