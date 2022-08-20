@@ -1,6 +1,6 @@
-
 .contenedor{
-    margin-top: 10vh;
     box-sizing: border-box;
     color: var(--color-azul);
+    padding: 110px 500px;
+    
 }

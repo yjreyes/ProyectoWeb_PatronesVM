@@ -18,12 +18,12 @@ public class Vehiculo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idVehiculo;
-
-    String modelo;
-    String marca;
-    int anno;
-    int kilometraje;
-    double precio;
+    private Long idTipo;
+    private String modelo;
+    private String marca;
+    private int anno;
+    private int kilometraje;
+    private double precio;
 
     public Vehiculo() {
     }
