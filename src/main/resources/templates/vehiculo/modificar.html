@@ -2,7 +2,7 @@
 <<html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://thymeleaf.org/extras/spring-security">
-    <head th:replace="layout/plantillaMenu :: head">
+    <head th:replace="layout/plantilla :: head">
         <title>AutoCR</title>
         <meta charset="UTF-8">
         <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
@@ -10,7 +10,7 @@
         <link href="/estilosCSS/estiloLogin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header th:replace="layout/plantillaMenu :: menu"></header>
+        <header th:replace="layout/plantilla :: header"></header>
         <div class="contenedor">
             <hr>
             <form th:action="@{/vehiculo/guardar}"
@@ -45,7 +45,7 @@
                 <hr>
             </form>
         </div>
-        <footer th:replace="layout/plantillaMenu :: footer">
+        <footer th:replace="layout/plantilla :: footer">
         </footer>
     </body>
 </html>

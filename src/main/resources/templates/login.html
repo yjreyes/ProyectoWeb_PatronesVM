@@ -1,56 +1,45 @@
+<!DOCTYPE html>
 
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://thymeleaf.org/extras/spring-security">
-    <head th:replace="layout/plantillaMenu :: head">
+    <head th:replace="layout/plantilla :: head">
         <title>AutosCR</title>
-        <link href="/estilosCSS/estiloLogin.css" rel="stylesheet" type="text/css"/>
+        <meta charset="UTF-8">
     </head>
     <body>
         <h1>AutoCR</h1>
-        <section id="actions" class="py-4 md-4 bg-light">
-            <div class="container">
-                <div class="row">
-                </div>
-            </div>            
-        </section>
-        <section id="login">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 mx-auto">
-                        <div class="card">
-                            <div class="card-header bg-primary text-white">
-                                <h4>[[#{login.login}]]</h4>
-                            </div>
-                            <div class="card-body bg-primary">
-                                <form method="POST" th:action="@{/login}">
-                                    <div class="row py-1 md-2 bg-primary text-white">
-                                        <div class="form-group">
-                                            <label for="username">[[#{login.username}]]</label>
-                                            <input type="text" name="username" id="username"/>
-                                        </div>
-                                    </div>
-                                    <div class="row py-1 md-2 bg-primary text-white">
-                                        <div class="form-group">
-                                            <label for="password">[[#{login.password}]]</label>
-                                            <input type="password" name="password" id="password"/>
-                                        </div>
-                                    </div>
-                                    <div class="row py-1 md-2 bg-primary ">
-                                        <button 
-                                            type="submit" 
-                                            class="btn btn-info btn-block">
-                                            [[#{login.login}]]
-                                        </button>
-                                    </div>                                    
-                                </form>
-                                <p id="info" style="font-family: sans-serif " class="text-white" >No tienes cuenta?</p>
-                                <a th:href="@{/usuario/nuevo}" class="text-white" style="font-family: sans-serif ">Registrarse</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div id="cuadro">
+
+            <form method="post" th:action="@{/login}">
+                <p id="titulo" style="font-family: sans-serif" >&nbsp  &nbsp[[#{login.login}]]</p>
+                <hr>
+                    <br/><br/>
+                    <label id="subtitulo1" for="username" style="font-family: sans-serif" >&nbsp &nbsp [[#{login.username}]]</label>
+                    <br/><br/>
+                    <input type="text" name="username" id="username" class="entrada"/>
+                    <br/><br/>
+                    <label id="subtitulo2" for="password" style="font-family: sans-serif" >&nbsp [[#{login.password}]]</label>
+                    <br/><br/>
+                    <input type="password" name="password" id="password" class="entrada"/>
+                    <br/><br/>
+                    <input type="submit" value="Iniciar Sesión" id="boton"/>
+                    <br/><br/>
+            </form>
+            <br/>
+            <p id="info" style="font-family: sans-serif " class="text-white" >No tienes cuenta?</p>
+            <a th:href="@{/usuario/nuevo}" style="font-family: sans-serif ">Registrarse</a>
+            <br>
+            <a th:href="@{/}" style="font-family: sans-serif ">Invitado</a>
+            <div th:if="${param.error}" class="alert alert-danger" role="alert">
+                Usuario o Contraseña invalida.
             </div>
-        </section>
+            <div th:if="${param.logout}" class="alert alert-success" role="alert">
+                Cerraste la sesión
+            </div>
+        </div>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
     </body>
 </html>

@@ -2,51 +2,47 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://thymeleaf.org/extras/spring-security">
-    <head th:replace="layout/plantillaMenu :: head">
-        <title>AutoCR</title>
+    <head th:replace="layout/plantilla :: head">
+        <title>AutosCR</title>
         <meta charset="UTF-8">
-            <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
-            <link href="/estilosCSS/estilosInicio.css" rel="stylesheet" type="text/css"/>
-            <link href="/estilosCSS/estiloLogin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <h1>AutoCR</h1>
+        <h1>AutosCR</h1>
         <div>
             <form th:action="@{/usuario/guardar}"
                   method="post"
                   th:object="${usuario}">
                 <input type="hidden" name="idusuario" th:field="*{idusuario}"/>
-                <label for="nombre">Nombre:</label>
+                <br>
+                &nbsp <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" th:field="*{nombre}"/>
                 <br/><br/>
 
-                <label for="apellidos">Apellidos:</label>
+                &nbsp <label for="apellidos">Apellidos:</label>
                 <input type="text" name="apellidos" th:field="*{apellidos}"/>
                 <br/><br/>
 
-                <label for="correo">Correo:</label>
+                &nbsp <label for="correo">Correo:</label>
                 <input type="email" name="correo" th:field="*{correo}"/>
                 <br/><br/>
 
-                <label for="cedula">Cédula:</label>
+                &nbsp <label for="cedula">Cédula:</label>
                 <input type="text" name="cedula" th:field="*{cedula}"/>
                 <br/><br/>
 
-                <label for="telefono">Teléfono:</label>
+                &nbsp <label for="telefono">Teléfono:</label>
                 <input type="tel" name="telefono" th:field="*{telefono}"/>
                 <br/><br/>
 
-                <label for="contraseña">Contraseña:</label>
+                &nbsp <label for="contraseña">Contraseña:</label>
                 <input type="password" name="contraseña" th:field="*{contraseña}"/>
                 <br/><br/>
-                <input type="submit" name="guardar" value="Guardar" id="botonFormulario"/>
+                &nbsp <input type="submit" name="guardar" value="Guardar" id="botonFormulario"/>
             </form>
             <form th:action="@{/login}">
-                <input type="submit" value="Cancelar" id="botonFormulario"/>
+                &nbsp <input type="submit" value="Cancelar" id="botonFormulario"/>
                 <hr>
             </form>
         </div>
-        <footer th:replace="layout/plantillaMenu :: footer">
-        </footer>
     </body>
 </html>

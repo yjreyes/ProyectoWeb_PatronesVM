@@ -12,4 +12,5 @@ public interface UsuarioService {
     public void delete(Usuario usuario);
 
     public Usuario getUsuario(Usuario usuario);
+
 }

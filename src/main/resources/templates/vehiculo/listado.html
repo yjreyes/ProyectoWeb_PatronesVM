@@ -2,11 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://thymeleaf.org/extras/spring-security">
-    <head th:replace="layout/plantillaMenu :: head"></head>
+    <head th:replace="layout/plantilla :: head"></head>
     <body>
-        <header th:replace="layout/plantillaMenu :: menu"></header>
+        <header th:replace="layout/plantilla :: header"></header>
+        <section th:replace="layout/plantilla :: agregarVehiculo"/>
         <div class="contenedor">
-            <h2>[[#{vehiculo.titulo}]]</h2>
+            <h5>[[#{vehiculo.titulo}]]</h5>
             <div th:if="${vehiculos != null and !vehiculos.empty}">
                 <table border=".5">
                     <thead>
@@ -45,7 +46,7 @@
                 <a th:href="@{/}">Salir</a>
             </div>
         </div>
-         <footer th:replace="layout/plantillaMenu :: footer">
+         <footer th:replace="layout/plantilla :: footer">
         </footer>
     </body>
 </html>

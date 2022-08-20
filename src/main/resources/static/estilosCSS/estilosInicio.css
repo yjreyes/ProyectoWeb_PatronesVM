@@ -1,6 +1,5 @@
 
 .conten-inicio{
-    margin-top: 10vh;
     padding-bottom: 40px;
     box-sizing: border-box;
     color: var(--azul);
@@ -13,7 +12,7 @@ h2{
     background-repeat: no-repeat;
     z-index: -5;
     width: 100%;
-    height:80vh; 
+    height:80vh;
     padding-top: 100px;
 }
 
@@ -23,7 +22,7 @@ h2{
     font-size: 30px;
     background-color: var(--color-azul);
     opacity: .8;
-    padding: 50px 20px;	
+    padding: 50px 20px;
     border: solid var(--color-naranja);
     border-radius: 10px;
     margin:10px 0 0 30px;
@@ -33,11 +32,11 @@ h2{
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
-    
+
 }
 .conten-art-compra{
     background-image: url("/imagen/car-honda1.jpg");
-    width: 400px; 
+    width: 400px;
     height: 350px;
     color:var(--color-azul);
     z-index: -20;
@@ -46,113 +45,112 @@ h2{
     padding-top: 175px;
 }
 .info-compr{
-    color: var(--color-azul);    
+    color: var(--color-azul);
     font-size: 12px;
     background-color: var(--color-blanco);
-    opacity: .8;        
+    opacity: .8;
     border-radius: 10px;
     width: 400px;
     height: 175px;
     padding: 10px 10px 0 10px;
 }
 
-                                /*inicia CSS detalle Vehiculo*/
+/*inicia CSS detalle Vehiculo*/
 .conten-detalle-vh{
-	text-align: center;
-	margin-top: 10vh;
-        padding: 20px 0;
+    text-align: center;
+    padding: 110px 0;
 }
-.conten-info{	
-	display: flex;		
+.conten-info{
+    display: flex;
 
 }
 .div-img{
-	width: 600px;
-	height: 450px;
-	
+    width: 600px;
+    height: 450px;
+
 
 }
-.div-img img{	
-	width: 100%;
- 	height: 100%;
- 	border-radius: 10px;
+.div-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
 }
 .div-info{
-	padding: 50px 20px;
-	background-color: lightblue;
-	border: solid darkblue;
-	border-radius: 10px;
-	margin-left: 50px;
-	width: 600px;
+    padding: 50px 20px;
+    background-color: lightblue;
+    border: solid darkblue;
+    border-radius: 10px;
+    margin-left: 50px;
+    width: 600px;
 
 }
 .btn-add{
-	padding: 10px 20px;	
-	border-radius: 5px;
-	margin: 30px 0;
-	background-color: darkblue;	
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 30px 0;
+    background-color: darkblue;
 
 }
 .btn-add a{
-	text-decoration: none;
-	color: white;
+    text-decoration: none;
+    color: white;
 }
 .info-auto{
-	font-size: 20px;
+    font-size: 20px;
 }
-                    /*Aqui inicia css de mensajesExito*/
+/*Aqui inicia css de mensajesExito*/
 .emergent-conten{
-	text-align: center;
-	margin-top: 10vh;
-	color: darkblue;
-	font-size: 20px;
-        padding: 20px 0;
+    text-align: center;
+    margin-top: 10vh;
+    color: darkblue;
+    font-size: 20px;
+    padding: 20px 0;
 }
 .btn-fin{
-	padding: 10px 20px;	
-	border-radius: 5px;	
-	background-color: orange;	
-	font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: orange;
+    font-size: 20px;
 }
 .btn-fin a{
-	text-decoration: none;
-	color: darkblue;
+    text-decoration: none;
+    color: darkblue;
 }
-               /* Aqui inicia el css de perfil usuario*/
+/* Aqui inicia el css de perfil usuario*/
 .perfil-conten{
-	text-align: center;
-	margin: 10vh 0;              
+    text-align: center;
+    padding: 110px 0;
 }
 .foto-circulo{
-	display: inline-block;
-	border: solid orange;
-	border-radius: 50%;
+    display: inline-block;
+    border: solid orange;
+    border-radius: 50%;
 }
 .foto-img{
-	width: 200px;
-	height: 200px;
-	margin: 10px 10px;
-	border-radius: 50%;
-	border: solid orange;
-	
+    width: 200px;
+    height: 200px;
+    margin: 10px 10px;
+    border-radius: 50%;
+    border: solid orange;
+
 
 }
-.foto-img img{	
-	width: 100%;
- 	height: 100%;
- 	border-radius: 50%;
+.foto-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 .info-user{
-	display: inline-block;
-	font-size: 20px;
+    display: inline-block;
+    font-size: 20px;
 }
 .btn-cerrar-perfil{
-	padding: 10px 20px;	
-	border-radius: 5px;	
-	background-color: orange;	
-	font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: orange;
+    font-size: 20px;
 }
 .btn-cerrar-perfil a{
-	text-decoration: none;
-	color: darkblue;
+    text-decoration: none;
+    color: darkblue;
 }

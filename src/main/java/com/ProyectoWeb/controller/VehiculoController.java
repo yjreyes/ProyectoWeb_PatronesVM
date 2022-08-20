@@ -1,6 +1,7 @@
 package com.ProyectoWeb.controller;
 
 import com.ProyectoWeb.domain.Vehiculo;
+import com.ProyectoWeb.service.TipoService;
 import com.ProyectoWeb.service.VehiculoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,28 +16,21 @@ public class VehiculoController {
 
     @Autowired
     private VehiculoService vehiculoService;
-
-    @GetMapping("/menu")
-    public String menu() {
-        return "menu";
-    }
+    
+    @Autowired
+    private TipoService tipoService;
 
     @GetMapping("/vehiculo/listado")
-    public String incio(Model model) {
+    public String incio(Vehiculo vehiculo, Model model) {
         var vehiculos = vehiculoService.getVehiculos();
         model.addAttribute("vehiculos", vehiculos);
         return "vehiculo/listado";
     }
 
-    @GetMapping("/vehiculo/nuevo")
-    public String nuevoVehiculo(Vehiculo vehiculo) {
-        return "vehiculo/modificar";
-    }
-
     @PostMapping("/vehiculo/guardar")
     public String guardarVehiculo(Vehiculo vehiculo) {
         vehiculoService.save(vehiculo);
-        return "redirect:/menu";
+        return "redirect:/";
     }
 
     @GetMapping("/vehiculo/modificar/{idVehiculo}")
@@ -51,17 +45,18 @@ public class VehiculoController {
         vehiculoService.delete(vehiculo);
         return "redirect:/menu";
     }
+
     @GetMapping("/vehiculo/alquila")
-    public String alquila(){
+    public String alquila(Vehiculo vehiculo, Model model) {
+        var tipos = tipoService.getTipos();
+        model.addAttribute("tipos", tipos);
         return "vehiculo/alquila";
     }
-    
-    @GetMapping("/loginAdmin")
-    public String Admin(){
-        return "loginAdmin";
-    }
+
     @GetMapping("/vehiculo/detalleArticulo")
-    public String detalleArticulo() {
+    public String detalleArticulo(Vehiculo vehiculo, Model model) {
+        var tipos = tipoService.getTipos();
+        model.addAttribute("tipos", tipos);
         return "vehiculo/detalleArticulo";
     }
 
