@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 import lombok.Data;
 
 @Data
@@ -17,18 +18,10 @@ public class Roles implements Serializable{
     
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_rol")
     private Long idRol;
-    
-    @Column
-    private String nombre;
-
-    public Roles() {
-    }
-
-    public Roles(String nombre) {
-        this.nombre = nombre;
-    }
-    
-    
+ 
+    @NotEmpty
+    private String nombre;  
 }
