@@ -5,48 +5,11 @@
     <head th:replace="layout/plantilla :: head"></head>
     <body>
         <header th:replace="layout/plantilla :: header"></header>
-        <section th:replace="layout/plantilla :: agregarVehiculo"/>
-        <div class="contenedor">
-            <h5>[[#{vehiculo.titulo}]]</h5>
-            <div th:if="${vehiculos != null and !vehiculos.empty}">
-                <table border=".5">
-                    <thead>
-                        <tr>
-
-                            <th>[[#{vehiculo.modelo}]]</th>
-                            <th>[[#{vehiculo.marca}]]</th>
-                            <th>[[#{vehiculo.anno}]]</th>
-                            <th>[[#{vehiculo.kilometraje}]]</th>
-                            <th>[[#{vehiculo.precio}]]</th>
-                            <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.eliminar}]]</th>
-                            <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.actualizar}]]</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="vehiculo : ${vehiculos}">
-                            <td th:text="${vehiculo.modelo}">Modelo: </td>
-                            <td th:text="${vehiculo.marca}"></td>
-                            <td th:text="${vehiculo.anno}"></td>
-                            <td th:text="${vehiculo.kilometraje}"></td>
-                            <td th:text="${#numbers.formatDecimal(vehiculo.precio,3,2)}"
-                                style="text-align: right"></td>
-                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/vehiculo/modificar/}+${vehiculo.idVehiculo}">Modificar</a></td>
-                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/vehiculo/eliminar/}+${vehiculo.idVehiculo}">Eliminar</a></td>
-                            <td><img src="https://th.bing.com/th/id/OIP.sLxN1lxvjCcho41jSEZhCQHaE8?pid=ImgDet&rs=1"
-                                     style="width: 200px;height: 200px;"/></td>                    
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <a th:href="@{/}">[[#{plantilla.logout}]]</a>
-            </div>
-            <div th:if="${vehiculos == null or vehiculos.empty}">
-                [[#{index.titulo}]]
-                <br>
-                <a th:href="@{/}">Salir</a>
-            </div>
-        </div>
-         <footer th:replace="layout/plantilla :: footer">
+        
+        <section th:replace="vehiculo/fragmentosVehiculo :: listadoVehiculo"/>
+        
+        <footer th:replace="layout/plantilla :: footer">
+            
         </footer>
     </body>
 </html>
