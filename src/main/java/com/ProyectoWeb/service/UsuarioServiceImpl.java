@@ -1,9 +1,7 @@
 package com.ProyectoWeb.service;
 
-import com.ProyectoWeb.dao.Roles_usuariosDao;
 import com.ProyectoWeb.dao.UsuarioDao;
 import com.ProyectoWeb.domain.Roles;
-import com.ProyectoWeb.domain.Roles_usuarios;
 import com.ProyectoWeb.domain.Usuario;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +23,6 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
     private UsuarioDao usuarioDao;
 
     @Autowired
-    private Roles_usuariosDao roles_usuariosDao;
-    
-    @Autowired
     BCryptPasswordEncoder encoder;
 
     @Override
@@ -41,11 +36,6 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
     public void save(Usuario usuario) {
         usuario.setContraseña(encoder.encode(usuario.getContraseña()));
         usuarioDao.save(usuario);
-        Roles_usuarios roles = new Roles_usuarios();
-        int i = 0;
-        roles.setIdusuario(i = Math.toIntExact(usuario.getIdusuario()));
-        roles.setId_rol(2);
-        roles_usuariosDao.save(roles);
     }
 
     @Override
@@ -57,19 +47,27 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
     @Override
     @Transactional(readOnly = true)
     public Usuario getUsuario(Usuario usuario) {
-        return usuarioDao.findById(usuario.getIdusuario()).orElse(null);
+        return usuarioDao.findById(usuario.getIdUsuario()).orElse(null);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Usuario usuario = usuarioDao.findBycorreo(username).orElseThrow(() -> new UsernameNotFoundException("No existe usuario"));
-        List roles = new ArrayList();
-        for (Roles rol : usuario.getRoles()) {
-            GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(rol.getNombre());
-            roles.add(grantedAuthority);
+
+        Usuario usuario = usuarioDao.findBycorreo(username);
+
+        if (usuario == null) {
+            throw new UsernameNotFoundException(username);
         }
-        UserDetails userDet = new User(usuario.getCorreo(), usuario.getContraseña(), roles);
-        return userDet;
+
+        var roles = new ArrayList<GrantedAuthority>();
+
+        for (Roles rol : usuario.getRoles()) {
+            roles.add(new SimpleGrantedAuthority(rol.getNombre()));
+        }
+
+        return new User(usuario.getCorreo(), usuario.getContraseña(), roles);
+
     }
 
 }

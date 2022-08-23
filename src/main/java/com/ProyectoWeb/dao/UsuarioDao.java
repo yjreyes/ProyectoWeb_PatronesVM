@@ -1,9 +1,10 @@
 package com.ProyectoWeb.dao;
 
 import com.ProyectoWeb.domain.Usuario;
-import java.util.Optional;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UsuarioDao extends CrudRepository<Usuario, Long> {
-    public Optional<Usuario> findBycorreo(String correo);
+public interface UsuarioDao extends JpaRepository<Usuario, Long> {
+
+    public Usuario findBycorreo(String correo);
+
 }

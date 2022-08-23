@@ -12,7 +12,7 @@
             <form th:action="@{/usuario/guardar}"
                   method="post"
                   th:object="${usuario}">
-                <input type="hidden" name="idusuario" th:field="*{idusuario}"/>
+                <input type="hidden" name="idUsuario" th:field="*{idUsuario}"/>
                 <br>
                 &nbsp <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" th:field="*{nombre}"/>
