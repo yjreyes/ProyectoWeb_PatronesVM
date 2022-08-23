@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+    <head th:replace="layout/plantilla :: head"></head>
+    <body>
+
+        <section th:fragment="listadoVehiculo" id="vehiculos">
+            <section th:replace="layout/plantilla :: agregarVehiculo"/>
+            <br><br><br><br>
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <div class="card-body">
+                                                    <h5>[[#{vehiculo.titulo}]]</h5>
+                                                    <div th:if="${vehiculos != null and !vehiculos.empty}">
+                                                        <table class="table table-striped">
+                                                            <thead class="bg-primary text-white">
+                                                                <tr>
+                                                                    <th>#</th>
+                                                                    <th>[[#{vehiculo.modelo}]]</th>
+                                                                    <th>[[#{vehiculo.marca}]]</th>
+                                                                    <th>[[#{vehiculo.anno}]]</th>
+                                                                    <th>[[#{vehiculo.kilometraje}]]</th>
+                                                                    <th>[[#{vehiculo.precio}]]</th>
+                                                                    <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.eliminar}]]</th>
+                                                                    <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.actualizar}]]</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr th:each="vehiculo,contador : ${vehiculos}">
+                                                                    <td>[[${contador.count}]]</td>
+                                                                    <td th:text="${vehiculo.modelo}">Modelo: </td>
+                                                                    <td th:text="${vehiculo.marca}"></td>
+                                                                    <td th:text="${vehiculo.anno}"></td>
+                                                                    <td th:text="${vehiculo.kilometraje}"></td>
+                                                                    <td th:text="${#numbers.formatDecimal(vehiculo.precio,3,2)}"
+                                                                        style="text-align: right"></td>
+
+                                                                    <td sec:authorize="hasRole('ROLE_ADMIN')">
+                                                                        <a th:href="@{/vehiculo/eliminar/}+${vehiculo.idVehiculo}" class='btn btn-danger'>
+                                                                            <i class='fas fa-trash'></i> [[#{accion.eliminar}]]</a></td>
+
+                                                                    <td sec:authorize="hasRole('ROLE_ADMIN')">
+                                                                        <a th:href="@{/vehiculo/modificar/}+${vehiculo.idVehiculo}" class='btn btn-success'>
+                                                                            <i class='fas fa-pencil'></i> [[#{accion.actualizar}]]</a></td>
+
+
+
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <br>
+                                                    </div>
+                                                    <div th:if="${vehiculos == null or vehiculos.empty}">
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                    <br>
+
+
+                                        <div class="col-md-3">
+                                            <div class="card bg-danger text-white text-center mb-3">
+                                                <div class="card-body">
+                                                    <h3>[[#{vehiculo.total}]]</h3>
+                                                    <h4>
+                                                        [[${new java.text.DecimalFormat('¢#,##0.00').format(totalPago)}]]
+                                                    </h4>
+
+                                                </div>
+                                            </div>
+
+                                            <div class='card bg-success text-white text-center mb-3'>
+                                                <div class="card-body">
+                                                    <h3>[[#{vehiculo.totalvehiculo}]]</h3>
+                                                    <h4>
+                                                        <i class="fas fa-car"></i> [[${vehiculoTotal}]]
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        </div>
+                                        </section>
+
+                                        </body>
+                                        </html>

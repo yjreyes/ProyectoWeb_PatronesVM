@@ -23,6 +23,12 @@ public class VehiculoController {
     @GetMapping("/vehiculo/listado")
     public String incio(Vehiculo vehiculo, Model model) {
         var vehiculos = vehiculoService.getVehiculos();
+        var totalPago = 0;
+        for(var c:vehiculos){
+            totalPago  += c.getPrecio();
+        }
+        model.addAttribute("totalPago",totalPago);
+        model.addAttribute("vehiculoTotal",vehiculos.size());
         model.addAttribute("vehiculos", vehiculos);
         return "vehiculo/listado";
     }
