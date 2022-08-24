@@ -1,48 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
       xmlns:sec="http://thymeleaf.org/extras/spring-security">
-    <head th:replace="layout/plantilla :: head">
-        <title>AutosCR</title>
-        <meta charset="UTF-8">
-    </head>
+    <head th:replace="layout/plantilla :: head"></head>
     <body>
         <h1>AutosCR</h1>
-        <div>
-            <form th:action="@{/usuario/guardar}"
-                  method="post"
-                  th:object="${usuario}">
-                <input type="hidden" name="idUsuario" th:field="*{idUsuario}"/>
-                <br>
-                &nbsp <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" th:field="*{nombre}"/>
-                <br/><br/>
-
-                &nbsp <label for="apellidos">Apellidos:</label>
-                <input type="text" name="apellidos" th:field="*{apellidos}"/>
-                <br/><br/>
-
-                &nbsp <label for="correo">Correo:</label>
-                <input type="email" name="correo" th:field="*{correo}"/>
-                <br/><br/>
-
-                &nbsp <label for="cedula">Cédula:</label>
-                <input type="text" name="cedula" th:field="*{cedula}"/>
-                <br/><br/>
-
-                &nbsp <label for="telefono">Teléfono:</label>
-                <input type="tel" name="telefono" th:field="*{telefono}"/>
-                <br/><br/>
-
-                &nbsp <label for="contraseña">Contraseña:</label>
-                <input type="password" name="contraseña" th:field="*{contraseña}"/>
-                <br/><br/>
-                &nbsp <input type="submit" name="guardar" value="Guardar" id="botonFormulario"/>
-            </form>
-            <form th:action="@{/login}">
-                &nbsp <input type="submit" value="Cancelar" id="botonFormulario"/>
-                <hr>
-            </form>
-        </div>
+        <section th:replace="usuario/fragmentosUsuario :: agregarUsuario"></section>
     </body>
 </html>

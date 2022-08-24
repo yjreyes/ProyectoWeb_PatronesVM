@@ -43,6 +43,7 @@ h2{
     outline: solid var(--color-naranja);
     border-radius: 10px;
     padding-top: 175px;
+    margin-left: 50px;
 }
 .info-compr{
     color: var(--color-azul);

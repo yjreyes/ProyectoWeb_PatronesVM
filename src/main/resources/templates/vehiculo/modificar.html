@@ -1,50 +1,12 @@
 <!DOCTYPE html>
-<<html xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://thymeleaf.org/extras/spring-security">
-    <head th:replace="layout/plantilla :: head">
-        <title>AutoCR</title>
-        <meta charset="UTF-8">
-        <link href="/estilosCSS/estilosplantilla.css" rel="stylesheet" type="text/css"/>
-        <link href="/estilosCSS/estilosInicio.css" rel="stylesheet" type="text/css"/>
-        <link href="/estilosCSS/estiloLogin.css" rel="stylesheet" type="text/css"/>
-    </head>
+    <head th:replace="layout/plantilla :: head"></head>
     <body>
         <header th:replace="layout/plantilla :: header"></header>
-        <div class="contenedor">
-            <hr>
-            <form th:action="@{/vehiculo/guardar}"
-                  method="post"
-                  th:object="${vehiculo}">
-                <input type="hidden" name="idvehiculo" th:field="*{idVehiculo}"/>
-                <br/>
-                <label for="modelo">Modelo:</label>
-                <input type="text" name="modelo" th:field="*{modelo}"/>
-                <br/><br/>
-
-                <label for="marca">Marca:</label>
-                <input type="text" name="marca" th:field="*{marca}"/>
-                <br/><br/>
-
-                <label for="anno">Año:</label>
-                <input type="number" name="anno" th:field="*{anno}"/>
-                <br/><br/>
-
-                <label for="kilometraje">Kilometraje:</label>
-                <input type="number" name="kilometraje" th:field="*{kilometraje}"/>
-                <br/><br/>
-
-                <label for="precio">Precio:</label>
-                <input type="number" name="precio" th:field="*{precio}"/>
-                <br/><br/>
-
-                <input type="submit" name="guardar" value="Guardar" id="botonFormulario"/>
-            </form>
-            <form th:action="@{/menu}">
-                <input type="submit" value="Cancelar" id="botonFormulario"/>
-                <hr>
-            </form>
-        </div>
+        <section th:replace="layout/plantilla :: agregarVehiculo"/>
+        <section th:replace="vehiculo/fragmentosVehiculo :: editarVehiculo"></section>
         <footer th:replace="layout/plantilla :: footer">
         </footer>
     </body>

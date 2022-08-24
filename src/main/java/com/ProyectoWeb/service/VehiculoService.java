@@ -12,4 +12,6 @@ public interface VehiculoService {
     public void delete(Vehiculo vehiculo);
 
     public Vehiculo getVehiculo(Vehiculo vehiculo);
+
+    public List<Vehiculo> getfindByIdTipo(Long idTipo);
 }

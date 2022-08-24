@@ -7,7 +7,6 @@ id_usuario int not null auto_increment primary key,
 nombre varchar(20) not null,
 apellidos varchar(30) not null,
 correo varchar(25) null,
-cedula varchar(10) null,
 telefono varchar(15) null,
 contraseña varchar(200) not null)
 ENGINE = InnoDB
@@ -54,7 +53,7 @@ values('ROLE_USUARIO',new.id_usuario);
 
 
 #########################################
-#Despues de crear el usuario, para los permisos de admin
+#Despues de crear el usuario para los permisos de admin
 insert into roles(nombre,id_usuario)
 values('ROLE_ADMIN',1);
 ############################################

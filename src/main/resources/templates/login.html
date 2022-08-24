@@ -3,12 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://thymeleaf.org/extras/spring-security">
-    <head th:replace="layout/plantilla :: head">
-        <title>AutosCR</title>
-        <meta charset="UTF-8">
-    </head>
+    <head th:replace="layout/plantilla :: head"></head>
     <body>
-        <h1>AutoCR</h1>
+        <h1>AutosCR</h1>
         <div id="cuadro">
 
             <form method="post" th:action="@{/login}">
@@ -23,19 +20,19 @@
                     <br/><br/>
                     <input type="password" name="password" id="password" class="entrada"/>
                     <br/><br/>
-                    <input type="submit" value="Iniciar Sesión" id="boton"/>
+                    <input type="submit" value="Log in" id="boton"/>
                     <br/><br/>
             </form>
             <br/>
-            <p id="info" style="font-family: sans-serif " class="text-white" >No tienes cuenta?</p>
-            <a th:href="@{/usuario/nuevo}" style="font-family: sans-serif ">Registrarse</a>
+            <p id="info" style="font-family: sans-serif " class="text-white" >[[#{login.noCuenta}]]</p>
+            <a th:href="@{/usuario/nuevo}" style="font-family: sans-serif ">[[#{login.Registro}]]</a>
             <br>
-            <a th:href="@{/}" style="font-family: sans-serif ">Invitado</a>
+            <a th:href="@{/}" style="font-family: sans-serif ">[[#{login.invitado}]]</a>
             <div th:if="${param.error}" class="alert alert-danger" role="alert">
-                Usuario o Contraseña invalida.
+                [[#{login.noUsuario}]]
             </div>
             <div th:if="${param.logout}" class="alert alert-success" role="alert">
-                Cerraste la sesión
+               [[#{login.cerrarSesion}]]
             </div>
         </div>
         <br/><br/>

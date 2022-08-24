@@ -34,8 +34,6 @@ public class Usuario implements Serializable {
     @NotEmpty
     private String correo;
     
-    private String cedula;
-   
     private String telefono;
 
     @NotEmpty
@@ -48,11 +46,10 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellidos, String correo, String cedula, String telefono, String contraseña, List<Roles> roles) {
+    public Usuario(String nombre, String apellidos, String correo, String telefono, String contraseña, List<Roles> roles) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
-        this.cedula = cedula;
         this.telefono = telefono;
         this.contraseña = contraseña;
         this.roles = roles;

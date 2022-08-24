@@ -1,0 +1,69 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+    <head th:replace="layout/plantilla :: head"/>
+    <body>
+        <section th:fragment="agregarUsuario">
+            <form th:action="@{/usuario/guardar}"
+                  method="post"
+                  th:object="${usuario}">
+                <input type="hidden" name="idUsuario" th:field="*{idUsuario}"/>
+                <section th:replace="usuario/fragmentosUsuario :: botonesUsuario"></section>
+                <div id="details">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header bg-primary text-white">
+                                        <h4>[[#{usuario.nuevo}]]</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3 form-group">
+                                            <label for="nombre" class="form-label">[[#{usuario.nombre}]]</label>
+                                            <input type="text" class="form-control"  name="nombre" required="true" th:field="*{nombre}"/>
+                                        </div>
+                                        <div class="mb-3 form-group">
+                                            <label for="apellidos" class="form-label">[[#{usuario.apellidos}]]</label>
+                                            <input type="text" class="form-control"  name="apellidos" required="true" th:field="*{apellidos}"/>
+                                        </div>
+                                        <div class="mb-3 form-group">
+                                            <label for="correo" class="form-label">[[#{usuario.correo}]]</label>
+                                            <input type="email" class="form-control"  name="correo" required="true" th:field="*{correo}"/>
+                                        </div>
+                                        <div class="mb-3 form-group">
+                                            <label for="telefono" class="form-label">[[#{usuario.telefono}]]</label>
+                                            <input type="tel" class="form-control"  name="telefono" th:field="*{telefono}"/>
+                                        </div>
+                                        <div class="mb-3 form-group">
+                                            <label for="contraseña" class="form-label">[[#{usuario.contrasena}]]</label>
+                                            <input type="password" class="form-control"  name="contraseña" required="true" th:field="*{contraseña}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+        
+        <section th:fragment="botonesUsuario">
+            <div id="actions" class="py-4 mb-4 bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="d-grid col-md-2 mx-auto">
+                            <a th:href="@{/login}" class="btn btn-ligth btn-block">
+                                <i class="fas fa-arrow-left"></i> [[#{accion.regresar}]]
+                            </a>
+                        </div>
+                        <div class="d-grid col-md-2 mx-auto">
+                            <button type="submit" class="btn btn-success btn-block">
+                                <i class="fas fa-check"></i> [[#{accion.guardar}]]
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
