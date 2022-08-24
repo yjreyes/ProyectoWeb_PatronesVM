@@ -9,97 +9,76 @@
         <section th:replace="layout/plantilla :: agregarVehiculo"/>
         <div class="conten-inicio">
             <div class="baner-inicio">                
-                    <div class="bienvenida">
-                        <b style="color: #f95959;">[[#{plantillaMenu.bienvenida}]]</b>
-                       <br>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" 
-                               class="bi bi-check2-square" viewBox="0 0 16 16">
-                          <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
-                          <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
-                          </svg> [[#{plantillaMenu.informacion1}]]
-                           <br>
+                <div class="bienvenida">
+                    <b style="color: #f95959;">[[#{plantillaMenu.bienvenida}]]</b>
+                    <br>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" 
+                             class="bi bi-check2-square" viewBox="0 0 16 16">
+                            <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
+                            <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
+                        </svg> [[#{plantillaMenu.informacion1}]]
+                        <br>
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" 
-                               class="bi bi-check2-square" viewBox="0 0 16 16">
-                          <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
-                          <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
-                          </svg> [[#{plantillaMenu.informacion2}]]
+                                 class="bi bi-check2-square" viewBox="0 0 16 16">
+                                <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
+                                <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
+                            </svg> [[#{plantillaMenu.informacion2}]]
                             <br>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" 
-                               class="bi bi-check2-square" viewBox="0 0 16 16">
-                          <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
-                          <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
-                          </svg> [[#{plantillaMenu.informacion3}]]
-                            <br>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" 
-                               class="bi bi-check2-square" viewBox="0 0 16 16">
-                          <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
-                          <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
-                          </svg> [[#{plantillaMenu.informacion4}]]
-                    </div>                
-            </div>            
-            <h2> [[#{plantillaMenu.venta}]]</h2>
-            <section class="art-compras">                                
-                <article class="conten-art-compra">                    
-                    <div class="info-compr">
-                       <h3>[[#{plantillaMenu.compra}]]</h3>
-                       <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.costo}]]$12000</p>
-                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>                       
-                    </div>                                          
-                </article>
-                <article class="conten-art-compra">                                        
-                    <div class="info-compr">
-                       <h3>[[#{plantillaMenu.compra}]]</h3>
-                       <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.costo}]]$12000</p>
-                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>                       
-                    </div>                      
-                </article>
-                <article class="conten-art-compra">                                        
-                    <div class="info-compr">
-                       <h3>[[#{plantillaMenu.compra}]]</h3>
-                       <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.costo}]]$12000</p>
-                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>                       
-                    </div>                      
-                </article>
-            </section>
-            <br><br><br>
-            <h2> [[#{plantillaMenu.renta}]]</h2>
-             <section class="art-compras">                                
-                <article class="conten-art-compra">                    
-                    <div class="info-compr">
-                       <h3>[[#{plantillaMenu.compra}]]</h3>
-                       <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.costo}]]$12000</p>
-                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>                       
-                    </div>                                          
-                </article>
-                <article class="conten-art-compra">                                        
-                    <div class="info-compr">
-                       <h3>[[#{plantillaMenu.compra}]]</h3>
-                       <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.costo}]]$12000</p>
-                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>                       
-                    </div>                      
-                </article>
-                <article class="conten-art-compra">                                        
-                    <div class="info-compr">
-                       <h3>[[#{plantillaMenu.compra}]]</h3>
-                       <p>[[#{plantillaMenu.marcavehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.modelovehiculo}]] xxxx</p>
-                       <p>[[#{plantillaMenu.costo}]]$12000</p>
-                       <p>[[#{plantillaMenu.adquisicioncompra}]]</p>                       
-                    </div>                      
-                </article>
-            </section>
-        </div>
-        
-         <footer th:replace="layout/plantilla :: footer"></footer>
-    </body>
-</html>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" 
+                                     class="bi bi-check2-square" viewBox="0 0 16 16">
+                                    <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
+                                    <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
+                                </svg> [[#{plantillaMenu.informacion3}]]
+                                <br>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" 
+                                         class="bi bi-check2-square" viewBox="0 0 16 16">
+                                        <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
+                                        <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
+                                    </svg> [[#{plantillaMenu.informacion4}]]
+                                    </div>                
+                                    </div>            
+                                    <h2> [[#{plantillaMenu.venta}]]</h2>
+                                    <section class="art-compras">
+                                        <div class="container">
+                                            <div class="row row-cols-3 mb-2" th:if="${vehiculosVenta != null and !vehiculosVenta.empty}">
+                                                <article class="conten-art-compra" th:each="vehiculo : ${vehiculosVenta}">                    
+                                                    <div class="info-compr">
+                                                        <h3>[[#{plantillaMenu.compra}]]</h3>
+                                                        <p>[[#{plantillaMenu.marcavehiculo}]] [[${vehiculo.marca}]]</p>
+                                                        <p>[[#{plantillaMenu.modelovehiculo}]] [[${vehiculo.modelo}]]</p>
+                                                        <p>[[#{plantillaMenu.costo}]] [[${new java.text.DecimalFormat('¢#,##0.00').format(vehiculo.precio)}]]</p>
+                                                        <p>[[#{plantillaMenu.adquisicioncompra}]]</p>                       
+                                                    </div>
+                                                </article>
+                                            </div>
+
+                                            <div th:if="${vehiculosVenta == null or vehiculosVenta.empty}">
+                                                [[#{vehiculo.no_mostrar}]]
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <br><br><br>
+                                                <h2> [[#{plantillaMenu.renta}]]</h2>
+                                                <section class="art-compras">                                
+                                                    <div class="container">
+                                                        <div class="row row-cols-3 mb-2" th:if="${vehiculosRenta != null and !vehiculosRenta.empty}">
+                                                            <article class="conten-art-compra" th:each="vehiculo : ${vehiculosRenta}">
+                                                                <div class="info-compr">
+                                                                    <h3>[[#{plantillaMenu.alquiler}]]</h3>
+                                                                    <p>[[#{plantillaMenu.marcavehiculo}]] [[${vehiculo.marca}]]</p>
+                                                                    <p>[[#{plantillaMenu.modelovehiculo}]] [[${vehiculo.modelo}]]</p>
+                                                                    <p>[[#{plantillaMenu.costo}]] [[${new java.text.DecimalFormat('¢#,##0.00').format(vehiculo.precio)}]]</p>
+                                                                    <p>[[#{plantillaMenu.alquilar}]]</p>  
+                                                                </div>
+                                                            </article>
+                                                        </div>
+                                                        <div th:if="${vehiculosVenta == null or vehiculosVenta.empty}">
+                                                            [[#{vehiculo.no_mostrar}]]
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                                </div>
+
+                                                <footer th:replace="layout/plantilla :: footer"></footer>
+                                                </body>
+                                                </html>

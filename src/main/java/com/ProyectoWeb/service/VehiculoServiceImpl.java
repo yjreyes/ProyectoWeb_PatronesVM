@@ -37,4 +37,9 @@ public class VehiculoServiceImpl implements VehiculoService {
         return vehiculoDao.findById(vehiculo.getIdVehiculo()).orElse(null);
     }
 
+    @Override
+    public List<Vehiculo> getfindByIdTipo(Long idTipo) {
+       return ((List<Vehiculo>) vehiculoDao.findByIdTipo(idTipo));
+    }
+
 }

@@ -24,6 +24,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/", "index").permitAll()
+                .antMatchers("/vehiculo/guardar","/vehiculo/modificar/**","/vehiculo/eliminar")
+                .hasRole("ADMIN")
                 .and()
                 .formLogin()
                 .loginPage("/login")
