@@ -38,6 +38,7 @@
                                                                     <th>[[#{vehiculo.precio}]]</th>
                                                                     <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.eliminar}]]</th>
                                                                     <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.actualizar}]]</th>
+                                                                    <th>[[#{accion.carrito}]]</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -57,6 +58,9 @@
                                                                     <td sec:authorize="hasRole('ROLE_ADMIN')">
                                                                         <a th:href="@{/vehiculo/modificar/}+${vehiculo.idVehiculo}" class='btn btn-success'>
                                                                             <i class='fas fa-pencil'></i> [[#{accion.actualizar}]]</a></td>
+                                                                    <td>
+                                                                        <a th:href="@{/vehiculo/modificar/}+${vehiculo.idVehiculo}" class='btn btn-primary'>
+                                                                            <i class="fas fa-cart"></i> [[#{accion.carrito}]]</a></td>  
                                                                 </tr>
                                                             </tbody>
                                                         </table>

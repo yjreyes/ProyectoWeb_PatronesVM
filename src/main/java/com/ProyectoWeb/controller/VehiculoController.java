@@ -53,9 +53,12 @@ public class VehiculoController {
 
     @GetMapping("/vehiculo/alquila")
     public String alquila(Vehiculo vehiculo, Model model) {
+        var vehiculos = vehiculoService.getfindByIdTipo(Long.valueOf(1));
+        model.addAttribute("vehiculoTotal", vehiculos.size());
+        model.addAttribute("vehiculos", vehiculos);
         var tipos = tipoService.getTipos();
         model.addAttribute("tipos", tipos);
-        return "vehiculo/alquila";
+        return "vehiculo/listado";
     }
 
     @GetMapping("/vehiculo/detalleArticulo")
@@ -63,6 +66,16 @@ public class VehiculoController {
         var tipos = tipoService.getTipos();
         model.addAttribute("tipos", tipos);
         return "vehiculo/detalleArticulo";
+    }
+
+    @GetMapping("/vehiculo/compra")
+    public String compra(Vehiculo vehiculo, Model model) {
+        var vehiculos = vehiculoService.getfindByIdTipo(Long.valueOf(2));
+        model.addAttribute("vehiculoTotal", vehiculos.size());
+        model.addAttribute("vehiculos", vehiculos);
+        var tipos = tipoService.getTipos();
+        model.addAttribute("tipos", tipos);
+        return "vehiculo/listado";
     }
 
 }
