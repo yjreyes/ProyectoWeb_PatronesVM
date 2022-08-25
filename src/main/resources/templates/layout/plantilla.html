@@ -15,12 +15,10 @@
             <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
             <link href="/estilosCSS/estilos.css" rel="stylesheet" type="text/css"/>
             <link href="/estilosCSS/estilosInicio.css" rel="stylesheet" type="text/css"/>
-            <link href="/estilosCSS/estilosListado.css" rel="stylesheet" type="text/css"/>
-            <link href="/estilosCSS/estilosAlquila.css" rel="stylesheet" type="text/css"/>
             <link href="/estilosCSS/estiloLogin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header th:fragment="header" class="barra">
+        <header th:fragment="header" class="barra_plantilla">
             <nav class="navbar navbar-expand-sm nav">
                 <a th:href="@{/}" class="logo_nav-link"><b>AutosCR</b></a>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -40,7 +38,7 @@
                         <li class="nav-item"><a class="nav-link text-light"  th:href="@{/vehiculo/compra}">[[#{plantillaMenu.compra}]]</a></li>
                         <li class="nav-item"><a class="nav-link text-light"  th:href="@{/vehiculo/alquila}">[[#{plantillaMenu.alquiler}]]</a></li>
                         <li class="nav-item"><a class="nav-link text-light"  th:href="@{/usuario/perfilUsuario}">[[#{plantillaMenu.mireserva}]]</a></li>
-                        <li class="nav-item"><a class="nav-link text-light"  th:href="@{/}">[[#{plantillaMenu.ayuda}]]</a></li>
+                        <li class="nav-item"><a class="nav-link text-light"  th:href="@{/usuario/ayuda}">[[#{plantillaMenu.ayuda}]]</a></li>
                         <li sec:authorize="hasRole('ROLE_USUARIO')" class="nav-item">
                             <a class="nav-link text-light"  href="#">
                                 <i class="fas fa-person"></i>
