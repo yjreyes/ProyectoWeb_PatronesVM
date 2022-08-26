@@ -1,6 +1,7 @@
 package com.ProyectoWeb.domain;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +25,8 @@ public class Vehiculo implements Serializable {
     private int anno;
     private int kilometraje;
     private double precio;
+    @Column(name="ruta_imagen")
+    private String rutaImagen;
 
     public Vehiculo() {
     }

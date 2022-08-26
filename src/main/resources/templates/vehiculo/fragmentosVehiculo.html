@@ -7,157 +7,163 @@
 
         <section th:fragment="listadoVehiculo" id="vehiculos">
             <section th:replace="layout/plantilla :: agregarVehiculo"/>
-            <br><br><br><br>
-                            <div id="actions" class="py-4 mb-4 bg-light">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="d-grid col-md-2">
-                                            <a th:href="@{/}" class="btn btn-ligth btn-block">
-                                                <i class="fas fa-arrow-left"></i> [[#{accion.regresar}]]
-                                            </a>
+            <br/><br/><br/><br/>
+            <div id="actions" class="py-4 mb-4 bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="d-grid col-md-2">
+                            <a th:href="@{/}" class="btn btn-ligth btn-block">
+                                <i class="fas fa-arrow-left"></i> [[#{accion.regresar}]]
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-body">
+                                    <h5>[[#{vehiculo.titulo}]]</h5>
+                                    <div id="resultsBlock">
+
+                                    </div>
+                                    <div th:if="${vehiculos != null and !vehiculos.empty}">
+                                        <table class="table table-striped">
+                                            <thead class="bg-primary text-white">
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>[[#{vehiculo.modelo}]]</th>
+                                                    <th>[[#{vehiculo.marca}]]</th>
+                                                    <th>[[#{vehiculo.anno}]]</th>
+                                                    <th>[[#{vehiculo.kilometraje}]]</th>
+                                                    <th>[[#{vehiculo.precio}]]</th>
+                                                    <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.eliminar}]]</th>
+                                                    <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.actualizar}]]</th>
+                                                    <th>[[#{accion.carrito}]]</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr th:each="vehiculo,contador : ${vehiculos}">
+                                                    <td>[[${contador.count}]]</td>
+                                                    <td th:text="${vehiculo.modelo}">Modelo: </td>
+                                                    <td th:text="${vehiculo.marca}"></td>
+                                                    <td th:text="${vehiculo.anno}"></td>
+                                                    <td th:text="${vehiculo.kilometraje}"></td>
+                                                    <td th:text="${#numbers.formatDecimal(vehiculo.precio,3,2)}"
+                                                        style="text-align: right"></td>
+
+                                                    <td sec:authorize="hasRole('ROLE_ADMIN')">
+                                                        <a th:href="@{/vehiculo/eliminar/}+${vehiculo.idVehiculo}" class='btn btn-danger'>
+                                                            <i class='fas fa-trash'></i> [[#{accion.eliminar}]]</a></td>
+
+                                                    <td sec:authorize="hasRole('ROLE_ADMIN')">
+                                                        <a th:href="@{/vehiculo/modificar/}+${vehiculo.idVehiculo}" class='btn btn-success'>
+                                                            <i class='fas fa-pencil'></i> [[#{accion.actualizar}]]</a></td>
+                                                    <td>
+                                                        <form>
+                                                            <input type="hidden" name="texto" th:value="${vehiculo.idVehiculo}"/>
+                                                            <button class="btn btn-ligth" id="addCar" name="addCar" onclick="addCard(this.form)" type="button">
+                                                                <i class="fas fa-cart-plus"></i>
+                                                            </button>
+                                                        </form></td>  
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br>
+                                    </div>
+                                    <div th:if="${vehiculos == null or vehiculos.empty}">
+                                        [[#{vehiculo.no_mostrar}]]
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class='card bg-success text-white text-center mb-3'>
+                    <div class="card-body">
+                        <h3>[[#{vehiculo.totalvehiculo}]]</h3>
+                        <h4>
+                            <i class="fas fa-car"></i> [[${vehiculoTotal}]]
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section th:fragment="editarVehiculo">
+            <br/><br/><br/><br/>
+            <form th:action="@{/vehiculo/guardar}"
+                  method="post"
+                  th:object="${vehiculo}">
+                <input type="hidden" name="idVehiculo" th:field="*{idVehiculo}"/>
+                <section th:replace="vehiculo/fragmentosVehiculo :: botonesVehiculo"></section>
+                <div id="details">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header bg-primary text-white">
+                                        <h4>[[#{vehiculo.vehiculo}]]</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3 form-group">
+                                            <label for="tipo">[[#{vehiculo.tipo}]]:</label>
+                                            <select th:field="*{idTipo}">
+                                                <option th:each="tipo : ${tipos}"
+                                                        th:value="${tipo.idTipo}"
+                                                        th:text="${tipo.descripcion}">
+                                            </select>
+                                        </div>
+                                        <div class="mb-3 form-group">
+                                            <label for="modelo" class="form-label">[[#{vehiculo.modelo}]]</label>
+                                            <input type="text" class="form-control" name="modelo" th:field="*{modelo}"/>
+                                        </div>
+                                        <div class="mb-3 form-group">
+                                            <label for="marca" class="form-label">[[#{vehiculo.marca}]]</label>
+                                            <input type="text" class="form-control" name="marca" th:field="*{marca}"/>
+                                        </div>
+                                        <div class="mb-3 form-group">
+                                            <label for="anno" class="form-label">[[#{vehiculo.anno}]]</label>
+                                            <input type="number" class="form-control" name="anno" th:field="*{anno}"/>
+                                        </div>
+                                        <div class="mb-3 form-group">
+                                            <label for="kilometraje" class="form-label">[[#{vehiculo.kilometraje}]]</label>
+                                            <input type="number" class="form-control" name="kilometraje" th:field="*{kilometraje}"/>
+                                        </div>
+                                        <div class="mb-3 form-group">
+                                            <label for="precio" class="form-label">[[#{vehiculo.precio}]]</label>
+                                            <input type="number" class="form-control" name="precio" th:field="*{precio}"/>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-9">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <div class="card-body">
-                                                    <h5>[[#{vehiculo.titulo}]]</h5>
-                                                    <div th:if="${vehiculos != null and !vehiculos.empty}">
-                                                        <table class="table table-striped">
-                                                            <thead class="bg-primary text-white">
-                                                                <tr>
-                                                                    <th>#</th>
-                                                                    <th>[[#{vehiculo.modelo}]]</th>
-                                                                    <th>[[#{vehiculo.marca}]]</th>
-                                                                    <th>[[#{vehiculo.anno}]]</th>
-                                                                    <th>[[#{vehiculo.kilometraje}]]</th>
-                                                                    <th>[[#{vehiculo.precio}]]</th>
-                                                                    <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.eliminar}]]</th>
-                                                                    <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.actualizar}]]</th>
-                                                                    <th>[[#{accion.carrito}]]</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr th:each="vehiculo,contador : ${vehiculos}">
-                                                                    <td>[[${contador.count}]]</td>
-                                                                    <td th:text="${vehiculo.modelo}">Modelo: </td>
-                                                                    <td th:text="${vehiculo.marca}"></td>
-                                                                    <td th:text="${vehiculo.anno}"></td>
-                                                                    <td th:text="${vehiculo.kilometraje}"></td>
-                                                                    <td th:text="${#numbers.formatDecimal(vehiculo.precio,3,2)}"
-                                                                        style="text-align: right"></td>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
 
-                                                                    <td sec:authorize="hasRole('ROLE_ADMIN')">
-                                                                        <a th:href="@{/vehiculo/eliminar/}+${vehiculo.idVehiculo}" class='btn btn-danger'>
-                                                                            <i class='fas fa-trash'></i> [[#{accion.eliminar}]]</a></td>
-
-                                                                    <td sec:authorize="hasRole('ROLE_ADMIN')">
-                                                                        <a th:href="@{/vehiculo/modificar/}+${vehiculo.idVehiculo}" class='btn btn-success'>
-                                                                            <i class='fas fa-pencil'></i> [[#{accion.actualizar}]]</a></td>
-                                                                    <td>
-                                                                        <a th:href="@{/vehiculo/modificar/}+${vehiculo.idVehiculo}" class='btn btn-primary'>
-                                                                            <i class="fas fa-cart"></i> [[#{accion.carrito}]]</a></td>  
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                        <br>
-                                                    </div>
-                                                    <div th:if="${vehiculos == null or vehiculos.empty}">
-                                                        [[#{vehiculo.no_mostrar}]]
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                    <br>
-                                        <div class='card bg-success text-white text-center mb-3'>
-                                            <div class="card-body">
-                                                <h3>[[#{vehiculo.totalvehiculo}]]</h3>
-                                                <h4>
-                                                    <i class="fas fa-car"></i> [[${vehiculoTotal}]]
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        </div>
-
-                                        </div>
-                                        </section>
-                                        </body>
-                                        <section th:fragment="editarVehiculo">
-                                            <br><br><br><br>
-                                                            <form th:action="@{/vehiculo/guardar}"
-                                                                  method="post"
-                                                                  th:object="${vehiculo}">
-                                                                <input type="hidden" name="idVehiculo" th:field="*{idVehiculo}"/>
-                                                                <section th:replace="vehiculo/fragmentosVehiculo :: botonesVehiculo"></section>
-                                                                <div id="details">
-                                                                    <div class="container">
-                                                                        <div class="row">
-                                                                            <div class="col">
-                                                                                <div class="card">
-                                                                                    <div class="card-header bg-primary text-white">
-                                                                                        <h4>[[#{vehiculo.vehiculo}]]</h4>
-                                                                                    </div>
-                                                                                    <div class="card-body">
-                                                                                        <div class="mb-3 form-group">
-                                                                                            <label for="tipo">[[#{vehiculo.tipo}]]:</label>
-                                                                                            <select th:field="*{idTipo}">
-                                                                                                <option th:each="tipo : ${tipos}"
-                                                                                                        th:value="${tipo.idTipo}"
-                                                                                                        th:text="${tipo.descripcion}">
-                                                                                            </select>
-                                                                                        </div>
-                                                                                        <div class="mb-3 form-group">
-                                                                                            <label for="modelo" class="form-label">[[#{vehiculo.modelo}]]</label>
-                                                                                            <input type="text" class="form-control" name="modelo" th:field="*{modelo}"/>
-                                                                                        </div>
-                                                                                        <div class="mb-3 form-group">
-                                                                                            <label for="marca" class="form-label">[[#{vehiculo.marca}]]</label>
-                                                                                            <input type="text" class="form-control" name="marca" th:field="*{marca}"/>
-                                                                                        </div>
-                                                                                        <div class="mb-3 form-group">
-                                                                                            <label for="anno" class="form-label">[[#{vehiculo.anno}]]</label>
-                                                                                            <input type="number" class="form-control" name="anno" th:field="*{anno}"/>
-                                                                                        </div>
-                                                                                        <div class="mb-3 form-group">
-                                                                                            <label for="kilometraje" class="form-label">[[#{vehiculo.kilometraje}]]</label>
-                                                                                            <input type="number" class="form-control" name="kilometraje" th:field="*{kilometraje}"/>
-                                                                                        </div>
-                                                                                        <div class="mb-3 form-group">
-                                                                                            <label for="precio" class="form-label">[[#{vehiculo.precio}]]</label>
-                                                                                            <input type="number" class="form-control" name="precio" th:field="*{precio}"/>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </form>
-                                                            </section>
-
-                                                            <section th:fragment="botonesVehiculo">
-                                                                <div id="actions" class="py-4 mb-4 bg-light">
-                                                                    <div class="container">
-                                                                        <div class="row">
-                                                                            <div class="d-grid col-md-2 mx-auto">
-                                                                                <a th:href="@{/vehiculo/listado}" class="btn btn-ligth btn-block">
-                                                                                    <i class="fas fa-arrow-left"></i> [[#{accion.regresar}]]
-                                                                                </a>
-                                                                            </div>
-                                                                            <div class="d-grid col-md-2 mx-auto">
-                                                                                <button type="submit" class="btn btn-success btn-block">
-                                                                                    <i class="fas fa-check"></i> [[#{accion.guardar}]]
-                                                                                </button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </section>
-                                                            </html>
+        <section th:fragment="botonesVehiculo">
+            <div id="actions" class="py-4 mb-4 bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="d-grid col-md-2 mx-auto">
+                            <a th:href="@{/vehiculo/listado}" class="btn btn-ligth btn-block">
+                                <i class="fas fa-arrow-left"></i> [[#{accion.regresar}]]
+                            </a>
+                        </div>
+                        <div class="d-grid col-md-2 mx-auto">
+                            <button type="submit" class="btn btn-success btn-block">
+                                <i class="fas fa-check"></i> [[#{accion.guardar}]]
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

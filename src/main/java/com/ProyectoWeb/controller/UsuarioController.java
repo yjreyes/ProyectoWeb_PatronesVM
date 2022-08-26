@@ -37,22 +37,6 @@ public class UsuarioController {
         var tipos = tipoService.getTipos();
         model.addAttribute("tipos", tipos);
         return "usuario/perfilUsuario";
-    }
-
-    @GetMapping("/mensajes/exitoCompra")
-    public String exitoCompra() {
-        return "/mensajes/exitoCompra";
-    }
-
-    @GetMapping("/mensajes/exitoAlquila")
-    public String exitoAlquila() {
-        return "/mensajes/exitoAlquila";
-    }
-    @GetMapping("/usuario/ayuda")
-    public String ayudaUsuario(Vehiculo vehiculo, Model model) {
-        var tipos = tipoService.getTipos();
-        model.addAttribute("tipos", tipos);
-        return "usuario/ayuda";
-    }
+    }    
 
 }
