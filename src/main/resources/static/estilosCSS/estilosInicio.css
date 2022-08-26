@@ -35,7 +35,6 @@ h2{
 
 }
 .conten-art-compra{
-    background-image: url("/imagen/car-honda1.jpg");
     width: 400px;
     height: 350px;
     color:var(--color-azul);
@@ -102,7 +101,7 @@ h2{
 /*Aqui inicia css de mensajesExito*/
 .emergent-conten{
     text-align: center;
-    margin-top: 10vh;
+
     color: darkblue;
     font-size: 20px;
     padding: 20px 0;

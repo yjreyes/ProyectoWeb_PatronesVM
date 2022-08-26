@@ -6,10 +6,8 @@
     <head th:fragment="head">
         <title>AutosCR</title>
         <meta charset="UTF-8">
-            <link rel="stylesheet" 
-                  th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
-            <link rel="stylesheet" 
-                  th:href="@{/webjars/font-awesome/css/all.css}"/>
+            <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+            <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}"/>
             <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
             <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
             <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
@@ -36,7 +34,7 @@
                                 <li><a class="dropdown-item" th:href="@{/vehiculo/listado}">[[#{vehiculo.titulo}]]</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link text-light" th:href="@{/vehiculo/detalleArticulo}">[[#{plantillaMenu.micarrito}]]</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" th:href="@{/carrito/listado}">[[#{plantillaMenu.micarrito}]]</a></li>
                         <li class="nav-item"><a class="nav-link text-light"  th:href="@{/vehiculo/compra}">[[#{plantillaMenu.compra}]]</a></li>
                         <li class="nav-item"><a class="nav-link text-light"  th:href="@{/vehiculo/alquila}">[[#{plantillaMenu.alquiler}]]</a></li>
                         <li class="nav-item"><a class="nav-link text-light"  th:href="@{/usuario/perfilUsuario}">[[#{plantillaMenu.mireserva}]]</a></li>

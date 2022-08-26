@@ -38,15 +38,5 @@ public class UsuarioController {
         model.addAttribute("tipos", tipos);
         return "usuario/perfilUsuario";
     }
-
-    @GetMapping("/mensajes/exitoCompra")
-    public String exitoCompra() {
-        return "/mensajes/exitoCompra";
-    }
-
-    @GetMapping("/mensajes/exitoAlquila")
-    public String exitoAlquila() {
-        return "/mensajes/exitoAlquila";
-    }
-
+    
 }
