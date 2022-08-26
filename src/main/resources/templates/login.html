@@ -5,7 +5,7 @@
       xmlns:sec="http://thymeleaf.org/extras/spring-security">
     <head th:replace="layout/plantilla :: head"></head>
     <body>
-        <h1 class="h1_login">AutosCR</h1>
+        <h1>AutosCR</h1>
         <div id="cuadro">
 
             <form method="post" th:action="@{/login}">
@@ -20,7 +20,7 @@
                     <br/><br/>
                     <input type="password" name="password" id="password" class="entrada"/>
                     <br/><br/>
-                    <input type="submit" value="Log in" id="boton_valida "/>
+                    <input type="submit" value="Log in" id="boton"/>
                     <br/><br/>
             </form>
             <br/>

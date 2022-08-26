@@ -4,7 +4,9 @@
     box-sizing: border-box;
     color: var(--azul);
 }
-
+h2{
+    margin: 20px 0 10px 50px;
+}
 .baner-inicio{
     background-image: url("/imagen/Auto-banner.jpg");
     background-repeat: no-repeat;
