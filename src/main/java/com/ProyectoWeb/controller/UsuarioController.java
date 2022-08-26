@@ -37,6 +37,6 @@ public class UsuarioController {
         var tipos = tipoService.getTipos();
         model.addAttribute("tipos", tipos);
         return "usuario/perfilUsuario";
-    }
-    
+    }    
+
 }
