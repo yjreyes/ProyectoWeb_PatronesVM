@@ -32,21 +32,10 @@ public class UsuarioController {
         return "redirect:/login";
     }
 
-    @GetMapping("/usuario/perfilUsuario")
-    public String perfilUsuario(Vehiculo vehiculo, Model model) {
+    @GetMapping("/usuario/ayuda")
+    public String ayudaUsuario(Vehiculo vehiculo, Model model) {
         var tipos = tipoService.getTipos();
         model.addAttribute("tipos", tipos);
-        return "usuario/perfilUsuario";
+        return "usuario/ayuda";
     }
-
-    @GetMapping("/mensajes/exitoCompra")
-    public String exitoCompra() {
-        return "/mensajes/exitoCompra";
-    }
-
-    @GetMapping("/mensajes/exitoAlquila")
-    public String exitoAlquila() {
-        return "/mensajes/exitoAlquila";
-    }
-
 }
