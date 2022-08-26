@@ -35,10 +35,9 @@
                         <li class="nav-item"><a class="nav-link text-light" th:href="@{/carrito/listado}">[[#{plantillaMenu.micarrito}]]</a></li>
                         <li class="nav-item"><a class="nav-link text-light"  th:href="@{/vehiculo/compra}">[[#{plantillaMenu.compra}]]</a></li>
                         <li class="nav-item"><a class="nav-link text-light"  th:href="@{/vehiculo/alquila}">[[#{plantillaMenu.alquiler}]]</a></li>
-                        <li class="nav-item"><a class="nav-link text-light"  th:href="@{/usuario/perfilUsuario}">[[#{plantillaMenu.mireserva}]]</a></li>
                         <li class="nav-item"><a class="nav-link text-light"  th:href="@{/usuario/ayuda}">[[#{plantillaMenu.ayuda}]]</a></li>
                         <li sec:authorize="hasRole('ROLE_USUARIO')" class="nav-item">
-                            <a class="nav-link text-light"  href="#">
+                            <a class="nav-link text-light">
                                 <i class="fas fa-person"></i>
                                 [[#{plantilla.bienvenido}]]:
                                 <span sec:authentication="name"></span>

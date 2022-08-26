@@ -108,6 +108,24 @@ body {
     text-align: center;
 }
 
+content_todo_ayuda{
+
+}
+.banner_ayuda{
+
+    background-color: var(--color-naranja);
+    padding: 100px 0;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.banner_ayuda{
+    background-color: var(--color-naranja);
+    padding: 100px 0;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
 .content_info_ayuda{
     padding: 10px 30px;
 }
@@ -116,9 +134,5 @@ body {
     color: var(--color-azul);
     padding-top: 30px;
 }
-
-
-
-
 
 

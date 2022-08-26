@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://thymeleaf.org/extras/spring-security">
-   <head th:replace="layout/plantilla :: head"></head>
-<body>
-    <header th:replace="layout/plantilla :: header"></header>
-    <div class="content_todo_ayuda">
+    <head th:replace="layout/plantilla :: head"></head>
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>
+        <section th:replace="layout/plantilla :: agregarVehiculo"/>
+            <div class="content_todo_ayuda">
     <div class="banner_ayuda">       
-        <h1 calss="h1_info_ayuda">¡Consejo para usuarios!</h1>
+        <h5 calss="h1_info_ayuda" style="font-size: xx-large">¡Consejo para usuarios!</h5>
 	</div>
             <div class="content_info_ayuda">
 		<div class="row">
@@ -29,8 +30,8 @@
                     </div>
 		</div>
             </div>
-    
+
     <footer th:replace="layout/plantilla :: footer"></footer>
     </div>
-</body>
+    </body>
 </html>

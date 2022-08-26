@@ -17,7 +17,7 @@
                         <div class="card-body">
                             <h5 class="card-title">[[${vehiculo.marca}]] [[${vehiculo.modelo}]]</h5>
                             <figure>
-                                <img th:src="@{${vehiculo.rutaImagen}}" width="120"/>
+                                <img th:src="@{${vehiculo.rutaImagen}}" width="200"/>
                                 <figcaption>
                                     [[${new java.text.DecimalFormat('¢#,##0.00').format(vehiculo.precio)}]]
                                 </figcaption>
@@ -53,7 +53,7 @@
                         <div class="card-body">
                             <h5 class="card-title">[[${vehiculo.marca}]] [[${vehiculo.modelo}]]</h5>
                             <figure>
-                                <img th:src="@{${vehiculo.rutaImagen}}" width="120"/>
+                                <img th:src="@{${vehiculo.rutaImagen}}" width="200"/>
                                 <figcaption>
                                     [[${new java.text.DecimalFormat('¢#,##0.00').format(vehiculo.precio)}]]
                                 </figcaption>
@@ -126,30 +126,31 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-center bg-primary text-white mb-3">
-                    <div class="card-body">
-                        <h3>[[#{carrito.totalCompra}]]</h3>
-                        <h4 class="fs-6">
-                            [[${carritoTotalVenta}]]
-                        </h4>
-                    </div>
-                </div>
 
-                <div class="card text-center bg-success text-white mb-3">
-                    <div class="card-body">
-                        <a th:href="@{/}" class="btn btn-success">
-                            <i class="fas fa-reply"></i> [[#{carrito.seguir}]]
-                        </a>
-                    </div>
-                </div>
-                <div class="card text-center bg-info text-white mb-3">
-                    <div class="card-body">
-                        <a th:href="@{/facturar/carrito}" class="btn btn-info">
-                            <i class="fas fa-fordward"></i> [[#{carrito.facturar}]]
-                        </a>
+                    <div class="col-md-2 ">
+                        <div class="card text-center bg-primary text-white mb-3">
+                            <div class="card-body">
+                                <h3>[[#{carrito.totalCompra}]]</h3>
+                                <h4 class="fs-6">
+                                    [[${carritoTotalVenta}]]
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="card text-center bg-success text-white mb-3">
+                            <div class="card-body">
+                                <a th:href="@{/}" class="btn btn-success">
+                                    <i class="fas fa-reply"></i> [[#{carrito.seguir}]]
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card text-center bg-info text-white mb-3">
+                            <div class="card-body">
+                                <a th:href="@{/facturar/carrito}" class="btn btn-info">
+                                    <i class="fas fa-fordward"></i> [[#{carrito.facturar}]]
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
